@@ -1,0 +1,956 @@
+\documentclass{mcmthesis}
+\mcmsetup{CTeX = false,    % 使用 CTeX 套装时，设置为 true
+          tcn = {2513021}, problem = \textcolor{red}{B},
+          sheet = true, titleinsheet = true, keywordsinsheet = true,
+          titlepage = false, abstract = false}
+
+% 字体 Times New Roman
+\usepackage{newtxtext}     % \usepackage{palatino}
+
+% 参考文献
+\usepackage[hyperref=true,style=ieee]{biblatex}  %带编号
+% \usepackage[style=apa,backend=biber]{biblatex}
+\addbibresource{reference.bib}
+
+\usepackage{amsmath} % 如果需要数学公式
+\usepackage{array}   % 用于自定义列宽度
+\usepackage{subcaption}  % 用于子图
+
+% 目录
+\usepackage{tocloft}
+\setlength{\cftbeforesecskip}{6pt}
+\renewcommand{\contentsname}{\hspace*{\fill}\Large\bfseries Contents \hspace*{\fill}}
+
+\title{Multi-objective optimization model based on sustainable tourism}
+\date{\today}
+
+\begin{document}
+
+\begin{abstract}
+    
+    The economy of Juneau, the capital of Alaska, is mainly driven by tourism. However, the rapid development of tourism has also brought a series of challenges, including overcrowding, infrastructure strain, environmental degradation, and residents' dissatisfaction. This study aims to develop sustainable tourism policies and models for Juneau to alleviate these problems while promoting sustained economic growth.
+
+    We assumed four different policies and compared the scores of different scenarios. In the actual model solving process, we first preprocessed the data of the number of tourists in previous years, used cubic interpolation to deal with the deviating data, and then used logistic regression to fit the change of the number of tourists with events. We constructed a network-based evaluation model that integrates key sectors such as economic income, environmental protection, and social welfare. We used \textbf{hierarchy analysis method (AHP)} to determine the weights of each sector and adopted \textbf{Monte Carlo algorithm} to complete \textbf{multi-objective optimization}, and finally obtained the optimal solution of the policy over forty years.
+    
+    The model results reveal the optimal tax allocation strategy for Juneau's tourism industry. \textbf{Before 2050}, it is recommended that the environmental protection investment ratio be \textbf{50\%}, the tourism tax be \textbf{\$60}/person, the advertising investment be \textbf{\$300,000}/year, and the number of cruise ships docked at the port should not exceed 5/day. \textbf{After 2050}, the environmental protection investment ratio should be increased to \textbf{75\%}, the tourism tax should be adjusted to \textbf{\$40}/person, the advertising investment should be increased to \textbf{\$700,000}/year, and the number of cruise ships docked at the port should not exceed 3/day. These recommendations aim to balance economic growth with sustainable use of resources and ensure long-term benefits to local communities and the environment.
+    
+    In addition, we conducted a sensitivity analysis to assess the robustness of the model. The analysis shows that the model is stable and responsive to key parameters, such as \textbf{per capita expenditure}, \textbf{advertising cost per 10,000 fans}, and \textbf{percentage of tourists affected by the tourism tax}. These parameters have predictable and controllable effects on the overall model score, validating the model's ability to adapt to future scenario changes. The flexibility of the model allows it to be adapted to other regions facing similar tourism challenges. In Section 8, we apply the model to Barcelona and make a forecast for Barcelona from 2010 to 2023, where our predicted tourism tax is \textbf{\$16.7153}, compared to the actual \textbf{\$13.04852}. Both the tourist fitting curve and the overall model have broad applicability.
+    
+    In summary, this study provides a comprehensive framework for evaluating and optimizing tourism policy in Juneau, Alaska. The results contribute to the broader field of sustainable tourism management by providing a politically based strategy that can be changed over time to promote long-term tourism development without compromising environmental integrity or the quality of life of local residents. The model is an important reference for other regions seeking to address the complex challenges posed by rapid tourism growth.
+
+\begin{keywords}
+    Sustainable tourism; Multi-objective optimization; Monte Carlo algorithm; Analytical Hierarchy Process
+\end{keywords}
+
+\end{abstract}
+
+\maketitle
+
+\tableofcontents        % 若不想要目录, 注释掉该句
+\thispagestyle{empty}
+
+\newpage
+
+
+\section{Introduction}  %Introduction
+
+\subsection{Background}  %Background
+
+Juneau, the capital of Alaska, is renowned for 
+its breathtaking natural landscapes, 
+including the Mendenhall Glacier, whale watching opportunities, 
+and lush rainforests, which have made tourism 
+a vital component of the local economy. 
+
+However, the surge in tourist arrivals—reaching 1.6 million 
+in 2023—has resulted in overcrowding, 
+overburdened infrastructure, and environmental degradation, 
+most notably the accelerated retreat of Mendenhall Glacier\cite{VanderNaald02012020},
+driven by both climate change and the pressures of over-tourism. 
+These challenges have prompted growing concerns 
+about the long-term viability of Juneau's tourism industry 
+and the sustainability of its natural resources.
+
+
+\subsection{Literature Review}
+
+Sustainable tourism seeks to achieve the best balance 
+between economic benefits and social 
+and environmental costs\cite{mckercher2003sustainable}.  
+In the context of Juneau, Alaska, "economic benefits" encompass not only 
+the direct consumer spending of tourists,   % 直接消费者支出
+such as in accommodation, dining, and transportation,  % 住宿，餐饮，交通
+but also the additional tax revenue generated from tourism-related activities\cite{unep2018}.
+This revenue contributes significantly to the local economy,  % 额外税收
+supporting both public services and infrastructure. 
+
+However, tourism's economic contribution must be carefully weighed against 
+its environmental costs. 
+These costs include carbon emissions, water resource depletion,   % 碳排放，水资源枯竭
+waste management challenges, and ecological degradation,  % 废物管理挑战，生态破坏
+particularly in sensitive areas such as Mendenhall Glacier, 
+where over-tourism exacerbates environmental pressures\cite{gossling2015}.
+
+Furthermore, the "social costs" refer to the impact of tourism on the local community, 
+including factors like housing affordability, infrastructure strain,  % 房价，基础设施
+and the overall well-being of residents\cite{unwto2020}. 
+The local population's satisfaction, 
+therefore, hinges not only on the economic benefits derived from tourism  % 经济收益
+but also on how well the negative effects, 
+such as overcrowding and increased living costs, are managed.  % 过度拥挤，房价上涨
+
+
+\subsection{Restatement of the Problem}
+
+Our mission is to provide Juneau with 
+the best policy and management strategies for the long term. 
+Our goal is to balance 
+    overall revenue, 
+    environmental costs, and 
+    social satisfaction.
+Based on the above understanding, 
+we need to solve the following problems:
+
+\begin{itemize}
+    \item Build a model for a sustainable tourism industry in Juneau, Alaska.
+        \begin{itemize}
+            \item Consider factors such as the number of tourists, overall revenue, 
+            and measures enacted to stabilize tourism.
+            \item Include a plan for expenditures from any additional revenue and show how 
+            these expenditures feed back into the model to promote sustainable tourism. 
+            \item Include a sensitivity analysis and 
+            discuss which factors are most important.
+        \end{itemize}
+    
+    
+    \item Apply the model to another city affected by overtourism.
+        \begin{itemize}
+            \item Explore how its unique characteristics and 
+            challenges influence the effectiveness of various tourism management strategies.
+            \item Examine how the choice of location affects 
+            the importance of various measures in tourism management.
+            \item Utilize the model to promote attractions and/or locations with fewer tourists, 
+            aiming to achieve a more balanced distribution of visitors.
+        \end{itemize}
+    
+    
+    \item Write a one-page memo to the tourist council of Juneau outlining our predictions, 
+    the effects of various measures, and our advice on how to optimize outcomes.
+\end{itemize}
+ 
+
+\subsection{Our Work}
+
+% 游客数量，经济收入，环境成本，社会满意度
+We set up a model based on the literature review and the problem statement,
+including key factors such as 
+visitor numbers, economic revenue, environmental costs, and social satisfaction. 
+The model also incorporates relevant constraints and optimization goals, 
+aiming to balance the economic benefits of tourism with its environmental 
+and social impacts. 
+Additionally, we include a sensitivity analysis to identify
+the most critical factors influencing the sustainability of tourism in Juneau. 
+The outcomes of this model will inform policy recommendations 
+for promoting sustainable tourism practices in the region.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=16cm]{our work.pdf}
+    \caption{The structure of our paper} \label{fig1}
+\end{figure}
+
+\section{Assumptions and Justification}
+
+To simplify the problem and make it convenient for us to simulate real-life 
+conditions, we make the following basic assumptions, 
+each of which is properly justified. 
+
+\noindent \textbf{Assumption 1: We assume that tourists' consumption structure remains unchanged.} 
+
+According to existing research on tourism behavior, tourists' consumption structure usually remains relatively stable in the short term. One study showed that cruise tourists' spending fluctuated less between years and was mainly concentrated in accommodation, dining, and shore activities\cite{Lee2018}. Therefore, it is reasonable to assume that tourists' consumption structure remains unchanged, especially in the absence of major economic, policy, or market changes.
+
+\noindent \textbf{Assumption 2: We focus exclusively on cruise passengers in the tourism industry.}
+
+Juneau is unique in that it has glaciers and steep terrain that prevents land access to the rest of Alaska, so it can only be reached by air or sea. According to McDowell (2017), 93\% of Juneau visitors arrive by cruise ship, with the remaining 7\% arriving by other means, such as flights. Due to the dominance of cruise ship passengers, this group is a major contributor to local tourism revenue and a key indicator of the city's tourism economic performance.
+
+\noindent \textbf{Assumption 3: We assume that, aside from the policies we propose, existing official policies in Juneau will remain unchanged.}
+
+This includes all current regulations related to tourism, environmental protection, and port management. The continuity of these policies is crucial to the impact of new measures introduced in our analysis. This assumption is based on current government reports and policy frameworks, which have remained stable over the past few years\cite{McDowell2017-2}.
+
+
+%-----------------------------------------------------------------------------------------
+% 3. Notations
+
+\section{Notations}
+
+\begin{center}
+    \begin{tabular}{ccc} \hline
+    {\bf Symbols} & {\bf Description} & {\bf Unit} \\ \hline
+    $N_i$ & The number of tourists in year i &  \\[0.2cm]
+    $E_i$ & The total expenditure of tourists in year i & dollar \\[0.2cm]
+    $R_i$ & The total revenue in year i & dollar \\[0.2cm]
+    $R_{visitor}$ & The revenue generated from tourists & dollar \\[0.2cm]
+    $R_{additional}$ & The additional revenue from tourism activities & dollar \\[0.2cm]
+    $R_{tourism}$ & Tourism tex & dollar \\[0.2cm]
+    $R_{ad}$ & Costs invested in advertising & dollar \\[0.2cm]
+    $W_i$ & Per capita tourism expenditure in year i & dollar \\[0.2cm]
+    $\tau$ & The tourism tax rate applied to tourism-related income &  \\[0.2cm]
+    $C_i$ & The carbon emissions (CO$_2$) in year i & kg \\[0.2cm]
+    $\alpha$ & Inflation rate for the tourism sector &  \\[0.2cm]
+    $N_{ship}$ & The number of cruise ships operating in year i &  \\[0.2cm]
+    $P$ & Cruise ship passenger capacity per vessel & \\[0.2cm]
+    $C_{dollar}$ & The CO$_2$ emissions per dollar earned from tourism activities & kg \\[0.2cm]
+    $C_{transport}$ & The CO$_2$ emissions per passenger transported on cruise ships & kg \\[0.2cm]
+    $C_{other}$ & The CO$_2$ emissions from tourists' various activities onshore & kg \\[0.2cm]
+    $C_{offset}$ & The CO$_2$ emissions reduction due to additional taxes on tourism & kg \\[0.2cm]
+    $M$ & glacier melt factor &  \\[0.2cm]
+    $\beta_1$ & Proportion of additional tax revenue used for environmental initiatives &  \\[0.2cm]
+    $\beta_2$ & Proportion of additional tax revenue used for social benefits &  \\[0.2cm]
+    $D$ & Average travel distance per cruise ship during a tourist season & km \\ \hline
+    \end{tabular}
+    \end{center}
+
+\noindent where we define the main parameters while specific value of those 
+parameters will be given later.
+
+%------------------------------------------------------------------
+% 4. Model Overview
+\section{Model Overview}
+
+We have developed a model based on a comprehensive review of the literature and the problem statement, focusing on three key components: economic revenue, environmental costs, and social satisfaction. Each component interacts through various variables, with each producing a score between 0 and 1 to indicate its performance. The higher the score, the better the performance in terms of sustainability and the health of the respective sector.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=16cm]{model.pdf}
+    \caption{Model Overview} \label{fig2}
+\end{figure}
+
+Economic revenue is influenced by the number of tourists, the spending behavior of visitors, and the revenue generated from taxes and tourism-related activities.
+Environmental costs include factors such as carbon emissions, water resource depletion, waste management, and ecological degradation, particularly in sensitive areas. Social satisfaction is affected by factors like housing availability, local infrastructure, and the overall well-being of residents.
+
+Policies that we adjusted the model to include:
+
+\begin{itemize}
+    \item \textbf{Limiting the number of tourists}, such as limiting the maximum number of ships that can dock per day,
+    \item \textbf{Imposing a tourism tax}, either increasing or decreasing the tourism tax, and we stipulated that the tourism tax is part of the additional tax revenue,
+    \item \textbf{The tax revenue or hotel fee revenue is allocated in different proportions to}
+    \begin{itemize}
+        \item[1)]
+        publicity, such as promoting rainforests and whale watching, which is to promote sustainable development,
+        \item[2)]
+        environmental protection, such as slowing down glacier melting and reducing carbon emissions,
+        \item[3)]  
+        improving social satisfaction, such as infrastructure construction, developing community projects, and addressing hidden burdens and housing pressure.
+    \end{itemize}  
+\end{itemize}
+
+We simulate a 40-year time span (2025-2065), testing various policy scenarios to determine the most effective strategies for sustainable tourism development. Figure 1 illustrates our model to demonstrate the interactions between the key components.
+
+
+%-------------------------------------------------------------------
+% 5. Model Design
+
+\section{Model Design}
+
+\subsection{Economic Revenue section}
+As previously mentioned, economic income is influenced by factors such as the number of tourists, their spending behavior, and the revenue generated from taxes and tourism-related activities. In this section, we will focus on these aspects and examine their interplay. Specifically, we will use tourism-related spending as a key measure of economic income, reflecting the direct contribution of visitors to the local economy.
+
+\subsubsection{The number of Tourists}
+
+\hspace{1em} We preprocessed the tourist number data of different years\cite{CLAAK2024} and used the cubic interpolation (spline) method to fill in the abnormal data. 
+We used the following formula to fit the number of tourists and added a normal distribution to represent data fluctuations.
+
+\begin{equation}
+    y = \frac{\sum_{1}^{N}\sum_{1}^{N_{ship}}P}{1 + e^{\lambda_0 + \lambda_1 x}} + \xi 
+\end{equation}
+
+\begin{equation}
+    \xi ~ \sim N(0, \sigma^2)
+\end{equation}
+\noindent where $N$ is the number of days the cruise ship is docked, $y$ is the number of tourists in year i, $N_{ship}$ is the number of cruise ships, $P$ is the cruise ship passenger capacity, and $\lambda_0$ and $\lambda_1$ are the model parameters.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=12cm]{The logistic regression fitting curve of tourists visiting Juneau.pdf}
+    \caption{The logistic regression fitting curve of tourists visiting Juneau} \label{tourists}
+\end{figure}
+
+Figure 3 shows the changes in the number of tourists in Juneau, where the blue dots represent the original data, the red dots represent the preprocessed data, and the yellow curve is the trend of the number of tourists obtained by fitting the logistic regression model.
+
+As shown in the figure \ref{tourists}, there are multiple outliers in the original data. In order to filter out the data deviation caused by low-probability events and reflect the actual situation more accurately, the cubic interpolation (spline function) method is used to effectively fill it. In the filling process, the smoothness of the data is guaranteed, thereby ensuring the continuity and consistency of the data.
+
+It is worth noting that due to the impact of the epidemic, the number of tourists in 2020, 2021, and 2022 has declined significantly, especially in 2020, when the number of tourists showed a trend of a sharp decline. This change reflects the reality of a general decline in the global tourism industry.
+
+Through this method, we effectively eliminated the irregular fluctuations in the data and obtained a smoother trend in the number of tourists with higher prediction accuracy. 
+In this way, $N_i$ has been calculated.
+In particular, since 2020, as the epidemic has been gradually brought under control, the number of tourists has shown an upward trend, and the fitting curve has captured this recovery process more accurately. The fitting results provide an important data basis for subsequent tourism economic analysis and provide a reliable reference for the prediction of future tourist numbers.
+
+\subsubsection{Calculating}
+
+\hspace{1em} Visitor industry spending includes three categories: visitor spending, cruise line spending, and cruise crew spending.
+Combined with the results of the literature survey\cite{McDowell2017}, we define the following equations to calculate the total revenue in the year i:
+
+\begin{equation} \label{eq1}
+    E_i = E_{visitor} + E_{cruise} + E_{crew\_member}
+\end{equation}
+
+\begin{itemize}
+    \item $E_{visitor}$: Visitor spending represents all dollars spent by out-of-state residents while in Juneau.
+        According to the reference, Tourist spending includes direct consumer spending, accommodation spending, food and catering spending, transportation spending and other spending, among which direct consumer spending includes shopping spending, sightseeing and entertainment spending.
+        We calculate visitor spending as follows:
+        \begin{equation} \label{eq3}
+            E_{visitor} = E_{direct} + E_{loaging} + E_{food} + E_{trans} + E_{shopping} + E_{other}
+        \end{equation}
+        
+    \item $E_{cruise}$: Cruise line expenditures are included in visitor expenditures 
+    because they represent industry expenditures received directly by local businesses. 
+    Cruise lines pay docking and berthing fees to the City of Juneau and the Borough of Juneau and to private marina owners; 
+    they purchase food and equipment from local retailers; and they pay for local services such as dry cleaning and printing. 
+    Cruise line expenditures are available from the literature\cite{CBJ2024}.
+        
+    \item $E_{crew\_member}$: Crew consumption is added to tourist consumption, which can be directly obtained from the survey results of Ref.
+\end{itemize}
+
+Figure \ref{spending} shows the proportion of visitor spending in Juneau\cite{ATIA2023}.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=12cm]{pie.pdf}
+    \caption{The proportion of visitor spending in Juneau}
+    \label{spending}
+\end{figure}
+
+Alternatively, we can use the following formula to calculate average tourist expenditure:
+\begin{equation} \label{eq2}
+        E_{visitor} = W_i \times N_i   
+\end{equation}
+\noindent where $N_i$ is the number of tourists in year i.
+
+Taking into account the inflation rate, we can calculate the annual growth rate of tourist expenditure as follows:
+\begin{equation}
+    W_i = W_{i - 1} \times (1 + \alpha)
+\end{equation}
+
+In order to fully calculate the economic income brought by consumers, in addition to considering direct consumption income, additional taxes need to be calculated. By adjusting the tax level in the model, we can effectively simulate the impact of taxes on the economy. In addition, tax revenue can be used to promote attractions, invest in environmental protection and social satisfaction, thereby obtaining an optimal solution that is more suitable for Juneau.
+\begin{equation} \label{revenue}
+    R_i = R_{visitor} + R_{company} + R_{policy} + R_{additional} - M_{promoting}\\
+\end{equation}
+\begin{equation}
+    R_{visitor} = E_{visitor} * \tau \\
+\end{equation}
+\noindent where $\tau$ is the tax rate, which is adjusted to reflect the economic status of Juneau.
+$M_{promoting}$ is the additional money generated from promoting other attractions.
+
+As for additional taxes, Juneau's current tourism tax policy includes a 5\% sales tax and a 9\% hotel bed tax\cite{Juneau2024Summer}.
+
+When the additional tax revenue is used for promotional purposes, the data we collected shows that tourism promotion through influencers can generate about 1\% to 3\% fan response rate. Specifically, the cost of each influencer campaign is \$124, targeting about 10,000 fans.
+In addition, the additional tax revenue is used for environmental protection and improving social satisfaction,
+with weights $\beta_1$ and $\beta_2$, respectively, and has the following relationship. These factors will be discussed in detail in the following sections.
+\begin{equation}
+    \beta_1 + \beta_2 = 1
+\end{equation}
+\noindent where $\beta_1$ and $\beta_2$ are the weights for environmental protection and social satisfaction, respectively.
+
+Based on the above results, we normalize each index so that it falls within the range of 0 to 1. Our scores for the economic income protection part are:
+
+\begin{equation} \label{score1}
+    Score1 = \frac{R_i}{R_{max}}
+\end{equation}
+
+\noindent where $R_{max}$ is the maximum revenue in Juneau.
+
+%----------------------------------------------------------------
+% Environmental Costs section
+
+\subsection{Environmental Costs section}
+
+We incorporate environmental protection into the model to ensure the sustainable development of Juneau. Environmental protection includes factors such as carbon emissions, glacier melting, water resource depletion, waste management, and ecological degradation. Here we only consider the first two aspects.
+
+\subsubsection{Carbon emissions}
+
+\hspace{1em} Tourism-related carbon emissions come not only from transportation, but also from accommodation, food and entertainment. \cite{unwto2018} In Juneau's tourism industry, tourists' carbon emissions are mainly composed of these factors. Specifically, carbon emissions from cruise passengers are the most influential, because most tourists arrive in Juneau by cruise, and cruise, as a high-carbon emission means of transportation, brings a carbon footprint that cannot be ignored.
+
+For the transportation carbon emissions of cruise passengers, we first need to calculate the total number of tourists arriving in Juneau each year. Based on the tourism data of the past few years, as well as the frequency of cruise arrivals and passenger capacity in Juneau, we can estimate the number of tourists arriving each year. This has been calculated in the economic income module.
+
+Next, based on the type and voyage distance of each cruise ship, we can calculate the carbon emissions of each voyage. Larger cruise ships usually require more fuel and have higher carbon emissions. In addition, the distance the cruise ship sails and the length of time it docks will also affect the total amount of carbon emissions. We estimate the carbon emissions of cruise ships by taking the average.
+
+\begin{figure}[htbp]
+    \centering  
+    \includegraphics[width=12cm]{2024 Cruise Schedule.pdf}
+    \caption{The cruise schedule of Juneau in 2024} \label{cruise}
+\end{figure}
+
+Figure \ref{cruise} shows the Juneau cruise schedule for 2024. We assume that the carbon emissions of cruise ships are constant for all cruise ships. We calculate the average carbon emissions of cruise ships obtained previously. And this figure can be inferred for the long season (156) 
+and short season (129) of tourism in Juneau\cite{Juneau2024}.In addition, although there are 6 cruise ships a day in a year, there are also cases where there are less than 5 in the short season. According to the policy that the city of Juneau will soon follow: a maximum of 5 cruise ships per day at the ferry, we set the current situation as less than or equal to 5 cruise ships per day at the port.
+
+In addition to transportation, accommodation, food and entertainment activities also have a significant impact on carbon emissions. We estimate tourists’ carbon emissions through their spending in these areas. Based on tourists’ annual economic expenditure data on accommodation, food and beverage, we can calculate the carbon emissions associated with these activities.
+
+We define annual carbon emissions using the following formula:
+
+\begin{equation} \label{eq5}
+    C_i = C_{transport} + C_{other} - C_{offset}
+\end{equation}
+
+\begin{itemize}
+    \item $C_{transport}$: As mentioned above, carbon emissions from transportation are calculated based on the number of tourists, the distance traveled by the cruise ship, and the type of cruise ship. We assume that carbon emissions from transportation are proportional to the distance traveled by the cruise ship. We assume that the carbon emissions of cruise ships are constant for all cruise ships. We calculate the average carbon emissions of cruise ships obtained previously.
+    \begin{equation} \label{eq6}
+            C_{transport} = \frac{N_i \times D \times C_{ship} }{P} \\ 
+        %    C_{ship} &= \frac{C_{ship, type} \times C_{distance}}{N_{ship}} \\
+    \end{equation}
+    \begin{equation}
+        N_{ship} = \frac{N_i}{P} \\
+    \end{equation}
+    \noindent Among them, $N_i$ is the number of tourists in the i-th year, $D$ is the average travel distance of each cruise ship, $C_{ship}$ is the carbon emissions per kilometer transported for each passenger, and $P$ is the passenger capacity of the cruise ship.
+    
+    \item $C_{other}$: Carbon emissions from other activities are calculated based on the total revenue and the CO$_2$ emissions per dollar earnd. We assume that the carbon emissions from other activities are proportional to the total revenue. The CO$_2$ emissions per dollar earnd is obtained from the literature.
+    Tourism is a carbon-intensive industry. 
+    Based on literature data\cite{Nature2024}, we can obtain the greenhouse gas emissions generated by every dollar earned in the tourism industry.
+
+    \begin{equation} \label{eq7}
+        \begin{aligned}
+            C_{other} &= R_i * C_{dollar} 
+        \end{aligned}
+    \end{equation}
+    \noindent where $R_i$ is the total revenue in year i, and $C_{dollar}$ is the CO$_2$ emissions per dollar earnd.
+    
+    \item $C_{offset}$: The amount of $CO_2$ emissions reduced by the additional tax revenue allocated for environmental protection is determined by taking into account the total amount of additional tax revenue and the specific portion of that revenue designated for environmental initiatives. We allocate this according to the percentage designated for environmental protection. The effectiveness of the additional tax input in reducing emissions is usually expressed as an emission reduction factor, and the associated CO2 emissions reduction is calculated based on known transport emission factors.
+    \begin{equation} \label{Coffset}
+        \begin{aligned}
+            C_{offset} &= \frac{\beta1 * R_{additional}}{M_{CO_2}} * 1000
+        \end{aligned}
+    \end{equation}
+    \noindent where $\beta1$ is the proportion of additional tax revenue used for environmental protection,
+    $M_{CO_2}$ is cost per ton of $CO_2$ treated.
+
+\end{itemize}
+
+Considering technical reasons, the annual carbon emission control is at most 90\%.
+
+Our final score for carbon emissions is calculated as follows:
+\begin{equation} \label{score2}
+    Score_{carbon} = 1 - \frac{C_i}{C_{max}}
+\end{equation}
+
+\subsubsection{Glacier melting}
+
+\hspace{1em} Glacier melt is a natural disaster that affects the local environment\cite{Juneau2024}. It is estimated that Juneau loses about 100 million tons of glacier mass each year.
+
+85\% of tourists come to visit the glaciers\cite{Juneau2024}. To account for Juneau's environmental sustainability, we include glacier melt as a key factor in our model. Glacier melt is an important indicator of climate change, directly affecting local ecosystems, tourism, and long-term environmental health. Glacier melt contributes to sea level rise and directly alters the landscape, which affects Juneau's attractiveness to tourists and its overall sustainability.
+
+To simulate glacier melt, we use a temperature-based model that relates temperature increases to ice loss rates. First, we express the temperature:
+
+\begin{equation}
+    T = T(x,y,t) = T_{WS}(t) + (z(x,y)-z_{WS}) \cdot \mathrm{d}T / \mathrm{d}z
+\end{equation}
+\noindent where $T_{WS}(t)$ is the temperature at the Weather Station, $z(x,y)$ is the elevation of the location, $z_{WS}$ is the elevation of the Weather Station, and $\mathrm{d}T / \mathrm{d}z$ is the rate of temperature decrease with elevation.
+
+The overall impact of glacier melt is modeled as a function of temperature increases, affected by global climate change and local weather patterns in Juneau. The model takes into account various factors, including environmental conditions such as temperature fluctuations, which directly affect glacier dynamics. We assume that glacier melt rates are not only affected by temperature, but also by economic activities, especially tourism. We use the following glacier melt rate model:
+
+\begin{equation}
+    M =
+    \begin{cases} 
+        (f_M + r\cdot I_{pot})\cdot T &, \text{if } T > 0^\circ C \\
+        0 &, \text{if } T \le 0^\circ C
+    \end{cases}
+\end{equation}
+% r: 冰表面的辐射因子
+\noindent where $f_M$ is the maximum glacier melt rate, $r$ is the albedo factor, and
+ $I_{pot} = I_{pot}(x,y,z)$ is the potential solar radiation, and $T$ is the temperature at the location.
+
+The glacier melt factor \(M\) can be further integrated into the overall environmental protection component of the model and used to adjust the overall sustainability score. Glacier melt can lead to increased ecological degradation, affecting biodiversity and water availability, which can negatively impact tourism. 
+
+\begin{table}[h]  %h表示固定在当前位置
+    \centering        %设置居中
+    \caption{Parameter values}  %表标题
+    \vspace{0.15cm}
+    \label{tab2}                       %设置表的引用标签
+    \begin{tabular}{ccc}  %3个c表示3列, |可选, 表示绘制各列间的竖线
+    \hline                    %画横线
+    Variables & Unit & 20-gl.mean     \\ \hline  %各列间用&隔开
+    $f_M$     & $10^{-3} d^{-1}$ $^\circ C^{-1}$ &   $0.808$  \\ 
+    $r$       & $10^{-5} m^3W^{-1}d^{-1}$ $^\circ C^{-1}$   &   $1.940$  \\ 
+    $\mathrm{d}T/\mathrm{d}z$  & $^\circ C^{-1}$ &   $-0.00521$   \\ \hline
+    \end{tabular}
+    \end{table}
+
+% The score for glacier melt is calculated as follows:
+
+% \begin{equation} \label{score5}
+%     Score_{glacier} = 1 - \frac{M}{M_{max}}
+% \end{equation}
+
+% \noindent where $M_{max}$ is the maximum glacier melt in Juneau.
+
+We calculated that the total time impact of glacier melting is close to 0, which cannot effectively change the rate of glacier melting under the influence of global climate change. Therefore, the model considers using additional taxes to promote other attractions to promote sustainable development. We define the environmental score as follows:
+
+\begin{equation} \label{score6}
+    Score2 = Score_{carbon} = 1 - \frac{C_i}{C_{max}}
+\end{equation}
+\noindent where $C_{max}$ is the maximum carbon emissions in Juneau.
+
+
+%---------------------------------------------------------------'
+% Social Satisfaction section
+
+\subsection{Social Satisfaction section}
+
+\subsubsection{Model ideas}
+
+\hspace{1em} Social satisfaction is a key component of our model, and is influenced by factors such as housing affordability, infrastructure pressure, and overall well-being of residents. In this section, we examine these aspects and their interactions. 
+
+Specifically, we consider the improvement in resident satisfaction from additional tax revenue invested in infrastructure, the increase in jobs from tourism, and resident feedback on the current number of tourists, cruise ships docking, and the noise, congestion, and inconvenience of public transportation caused by excessive tourists.
+
+    \subsubsection{Supplementary assumptions and justification}
+
+\noindent \textbf{Assumption 1: We assume that the trend of jobs provided by the tourism industry will not change in the future.}
+
+This assumption is based on the current trends observed in the tourism sector, where employment in hospitality, transportation, and other tourism-related services has shown consistent growth over recent years\cite{Jones2020}. 
+Although fluctuations may occur due to external factors such as economic downturns or pandemics, we expect that, under normal conditions, the overall trend of job creation in this sector will continue to align with historical patterns. 
+
+\noindent \textbf{Assumption 2: We assume that the attitudes of local residents towards the number of tourists remain valid.}
+
+This hypothesis is based on existing research and surveys that indicate that despite economic benefits, a large portion of local residents are concerned about overcrowding, environmental degradation, and changes to the local community structure as a result of the influx of 
+tourists\cite{McDowell2017-3}. 
+
+As tourism continues to be the dominant industry in Juneau’s economy, these sentiments are likely to persist, especially without significant changes in the management of tourism flows. Therefore, we hypothesize that levels of dissatisfaction will continue to be a relevant factor influencing local policy discussions and may influence future tourism regulations and strategies.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{pie1.pdf}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{pie2.pdf}
+    \end{subfigure}
+    \caption{Social satisfaction survey feedback}
+    \label{social}
+\end{figure}
+
+Figture \ref{social} shows the results of the survey on residents' satisfaction with the number of tourists, cruise ship docking, and the noise, congestion, and inconvenience of public transportation caused by too many 
+tourists\cite{CBJTourism2023}. The first survey asked residents what they would like to see in Juneau's future cruise ship transportation, and the second survey asked residents whether they felt the impact of tourism was overall positive, negative, both positive and negative, or no impact at all.
+
+\subsubsection{Calculating}
+
+\hspace{1em} Since social satisfaction is a complex and multifaceted concept that is difficult to quantify directly, we chose to represent it using a proportional indicator based on different influencing factors. These factors are related to various aspects of tourism and local development that affect the overall well-being of residents. Each factor is assigned a coefficient to quantify its impact on the social satisfaction of local residents in Juneau.
+
+First, we consider the increase in local residents' happiness that would result from allocating additional tax revenues to infrastructure development and community projects. It is well known that such investments contribute to the well-being of a community, whether through improved public services, better roads, or enhanced community spaces. We believe that there is a positive correlation between the proportion of tax revenues invested in these areas and the increase in local residents' satisfaction.
+
+This means that as the proportion of tax revenues invested increases, the quality of life of the people also improves. The coefficient $\rho_1$ represents the impact of this factor on social satisfaction, quantifying the extent to which residents' happiness increases due to investments in local infrastructure and community services. We normalize the scores of this component:
+
+\begin{equation}
+    Score_{revenue} = \beta_2
+\end{equation}
+\noindent where $\beta_2$ is the proportion of additional tax revenue used for infrastructure development.
+
+Second, we take into account the number of jobs that tourism provides to local residents. Tourism is a major economic driver in Juneau, and the jobs it creates can significantly improve residents' financial stability and sense of community engagement.
+
+We measure this impact using the share of tourism-related jobs in Juneau's total jobs. This share directly indicates the extent to which the local economy benefits from tourism. The coefficient $\rho_2$ reflects the impact of tourism-related jobs on social satisfaction. The scores for this component are as follows:
+
+\begin{equation}
+    Score_{jobs} = \frac{N_{jobs}}{S_{jobs}}
+\end{equation}
+\noindent where $N_{jobs}$ is the number of jobs provided to local residents by tourism, and $S_{jobs}$ is the total jobs in Juneau.
+
+Next, we considered the current dissatisfaction of local residents with the daily cap on the number of cruise ships allowed to dock. Juneau is a popular cruise ship destination, but the influx of tourists from multiple cruise ships sometimes leads to overcrowding and strains on local resources. As a result, residents feel dissatisfied that tourism has a negative impact on their daily lives.
+
+We hypothesize that the number of cruise ships per day is negatively correlated with social satisfaction: when the number of cruise ships exceeds a certain level, satisfaction decreases. The coefficient $\rho_3$ indicates the extent to which the cap on cruise ship docking affects resident satisfaction. The optimal value of $\rho_3$ would ideally balance tourism flow with local residents' comfort, since the goal is to maximize social satisfaction by minimizing this dissatisfaction. The scores for this section are as follows:
+
+\begin{equation}
+    Score_{cruise} = 1 - \delta
+\end{equation}
+\noindent where $\delta$ is the proportion of tourists dissatisfied with the current number of cruise ships parked in ports, 
+obtained from Firgure \ref{social}.
+
+We then consider the broader impact of tourists on the daily lives of local residents, particularly through the use of public transportation. As tourism grows, the demand for local transportation services also increases, which can affect residents' access to transportation, traffic congestion, and overall mobility within the city.
+
+Based on data collected from surveys and references, we estimate the impact of tourists' use of public transportation on residents' lives. This impact is expressed as a ratio, with higher ratios indicating greater inconvenience or disruption to local life caused by tourism. The coefficient $\rho_4$ represents the contribution of this factor to social satisfaction. This gives the score for this section:
+
+\begin{equation}
+    Score_{transport} = p
+\end{equation}
+\noindent Where $p$ is the proportion of the impact of tourists on the lives of local residents, taking values between 0 and 1.
+
+Tourists' use of public transportation will affect local life. When 90\% of 
+the number of tourists is greater than 7,000, there is a 95\% probability 
+of causing traffic congestion\cite{Juneau2024}, and p takes a value of 1.
+
+Finally, we combine all these proportional factors to calculate an overall score for social satisfaction, with each factor weighted by its corresponding coefficient. The resulting formula for social satisfaction is:
+\begin{equation} \label{score3}
+   Score3 = \rho_1 \times Score_{revenue} + \rho_2 \times Score_{jobs} + \rho_3 \times Score_{cruise} + \rho_4 \times Score_{transport}
+\end{equation}
+\begin{equation}
+    \rho_1 + \rho_2 + \rho_3 + \rho_4 = 1
+\end{equation}
+\noindent where $\rho_1$, $\rho_2$, $\rho_3$, and $\rho_4$ are the weights for the four factors, respectively.
+%----------------------------------------------------------------------
+% Overall Model
+
+\subsection{Overall Model}
+
+\hspace{1em} Based on the above sections, we construct the overall model as follows:
+
+\begin{equation} \label{eq9}
+    max(f) = max(\lambda_1 \times Score1 + \lambda_2 \times Score2 + \lambda_3 \times Score3)
+\end{equation}
+\noindent where $f$ is the overall score, $\lambda_1$, $\lambda_2$, and $\lambda_3$ are the weights for the three components, and $Score1$, $Score2$, and $Score3$ are the scores for the three components, respectively.
+
+The weights are constrained by the following formula:
+\begin{equation}
+    \lambda_1 + \lambda_2 + \lambda_3 = 1
+\end{equation}
+
+The purpose of the model is to balance the contribution of each component and optimize the overall result, which is a complex decision-making process that encompasses the multifaceted goals of Juneau's tourism management. The score of each component represents a key aspect of tourism policy and planning, and the weights determine the importance of each aspect in forming the final decision.
+
+By testing different policy scenarios and adjusting the weights accordingly, we can determine the optimal policy combination that maximizes the overall score \(f\) and aligns with Juneau's long-term tourism and environmental goals.
+
+The main constraints of the model are: the number of tourists is less than the number of people that the ships are allowed to carry each day, and the total amount of financial investment in environmental protection, infrastructure, and social welfare does not exceed the government's tax surplus.
+%---------------------------------------------------------
+% 6. Results and Discussion
+
+\section{Results and Discussion}
+
+In this section, we present the results of an in-depth analysis of a tourism revenue model for Juneau, Alaska. The model is tailored to Juneau's unique geographic and tourism environment, taking into account the particularities of the region's tourism industry.
+
+First, we outline the main results of the analysis, including the expected trends in the additional tax investment ratio, the setting of tourism taxes, and the number of visitors. We then discuss these results in detail, compare them with the current reality, and explore their potential far-reaching impact on Juneau's policy making and future tourism strategies.
+
+\subsection{Main Results}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=16cm]{Forty-year comparison of optimal scores and status quo scores.pdf}
+    \caption{Forty-year comparison of optimal scores and status quo scores} \label{results}
+\end{figure}
+
+In the solution process, we use a Monte Carlo algorithm based on a multi-objective optimization model to evaluate the results under different policy scenarios. These scenarios consider different policy variables, including the environmental investment ratio, tourism taxes, advertising investment, and the limit on the number of cruise ships that can dock at the port (i.e., the number of visitors).
+
+Through multiple simulations, we are able to model uncertainty and derive the impact of different policy combinations on Juneau's tourism revenue and sustainable development, thereby obtaining the optimal policy. Our results show the simulation results from 2025 to 2065.
+
+In Figure \ref{results}, status quo-score represents the total score for each year, and the meanings of score1, score2, and score3 are as described above.
+
+\subsection{Plan for expenditure}
+
+Based on the parameters derived from the results of Figure \ref{results}, we can give a spending plan for any additional income. 
+Based on the literature data obtained above, we set the parameters of the current situation: 
+the proportion of investment in the environment is 50\%, the tourism tax is 0\$, the advertising investment is 0\$, 
+and the maximum number of cruise ships docked at the port is 5. 
+
+The optimal policy obtained is: 
+
+\begin{itemize}
+    \item Before 2050:
+    the proportion of investment in the environment is 50\%, the tourism tax is 60\$, the advertising investment is 300,000\$, 
+    and the maximum number of cruise ships docked at the port is 5. 
+
+    \item After 2050:
+    the proportion of investment in the environment is 75\%, the tourism tax is 40\$, the advertising investment is 700,000\$, 
+    and the maximum number of cruise ships docked at the port is 3.
+\end{itemize} 
+
+\begin{table}[h]
+    \centering
+    \caption{Results for expenditure}
+    \vspace{0.15cm}
+    \label{tab:plan}
+    \begin{tabular}{cccccc}
+         \hline
+        Time & $\beta_1$ & $\beta_2$ & $R_{tourism}$ & $R_{ad}$ & $N_{ship}$ \\[0.1cm] \hline
+        Now & 0.5 & 0.5  & 0 & 0 & 5 \\ 
+        Before 2050 & 0.5 & 0.5  & 60 & 300,000 & 5 \\ 
+        After 2050 & 0.75 & 0.25 & 40 & 700,000 & 3 \\ \hline
+    \end{tabular}
+\end{table}
+ 
+Next, it is explained how these expenditures are fed back into the model to promote sustainable tourism: 
+
+\begin{itemize}
+    \item The additional tax revenue invested in the environment can reduce carbon emissions and slow the rate of glacier melting;
+    \item Additional tourism taxes levied on travelers increase additional taxes to increase investment in promoting other attractions, environmental protection, and social satisfaction;
+    \item Advertising investment refers to promoting other attractions, including whale watching and tropical rainforests, because these attractions need to be the main tourist destinations after the glaciers melt;
+    \item The maximum number of cruise ships docked at the port corresponds to the number of tourists, as well as the satisfaction of local residents with the number of tourists.
+\end{itemize}
+
+
+
+
+%---------------------------------------------------------------------
+% 7. Sensiivity Analysis
+
+\section{Sensitivity Analysis}
+
+As described in Section 6, we use a Monte Carlo algorithm based on a multi-objective optimization model to determine the future trends and some policies of Juneau's tourism industry. Since there are some parameters in the model that we set ourselves, or some parameters will change over time. In order to evaluate the certainty of the research results, we conducted a sensitivity analysis of the model by changing some coefficients in the model.
+
+We evaluated the sensitivity of the model results to changes in per capita consumption, the cost of blogger promotion per 10,000 followers, and the proportion of tourists affected by the tourism tax. As key factors driving tourism revenue, per capita consumption directly affects total tourism expenditure, promotion costs affect sustainable development, and consumption taxes affect the number of tourists.
+
+We adjusted per capita consumption values by increasing and decreasing them by 10\% from the baseline values obtained from our fitted model, and the cost of promotion per 10,000 followers ranged from \$50 to \$200 based on different platforms and different fan sizes. In addition, the proportion of tourists affected by the tourism tax was adjusted from an initial value of 2 to a range of 0-5.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{capita1.pdf}
+        \caption{Changes in per capita expenditure lead to changes in total score}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{capita2.png}
+        \caption{Changes in per capita consumption lead to changes in scores over the past 40 years}
+    \end{subfigure}
+    \caption{Aanalysis of per capita expenditure}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{fans1.pdf}
+        \caption{Change in total score due to change in advertising cost per 10,000 fans}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{fans2.png}
+        \caption{Changes in the score over the past 40 years due to changes in advertising cost per 10,000 fans}
+    \end{subfigure}
+    \caption{Aanalysis of advertising cost per 10,000 fans}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{tourism taxes1.pdf}
+        \caption{Change in total score due to change in tourism tax as a percentage of total expenditure to number of tourists}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{tourism taxes2.png}
+        \caption{Changes in the score over the past 40 years due to changes in tourism taxes as a percentage of total expenditures to the number of tourists}
+    \end{subfigure}
+    \caption{Aanalysis of proportion of tourists affected by tourism tax}
+\end{figure}
+
+\begin{table}[h]
+    \centering
+    \caption{Results of model score}
+    \vspace{0.15cm}
+    \begin{tabular}{ccc}
+        \hline  
+        Parameter Type & $max(Score)$ & $max(Score)$ \\ \hline
+        Per Capita Expenditure & 0.8018 & 0.6539 \\ 
+        Advertising Cost Per 10,000 Fans & 0.8069 & 0.6292 \\ 
+        Proportion of Tourisists Affected by Tourism Tax & 0.8056 & 0.4343 \\ \hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[h]
+    \centering
+    \caption{Results of total model score}
+    \vspace{0.15cm}
+    \begin{tabular}{ccc}
+        \hline  
+        Parameter Type & $max(Score_{total})$ & $max(Score_{total})$ \\ \hline
+        Per Capita Expenditure & 29.6103 & 29.0617 \\ 
+        Advertising Cost Per 10,000 Fans & 30.0863 & 28.4157 \\ 
+        Proportion of Tourisists Affected by Tourism Tax & 30.4326 & 25.2432 \\ \hline
+    \end{tabular}
+\end{table}
+
+The above analysis results show that the model is robust and stable. The impact of key parameters such as per capita expenditure, advertising costs per 10,000 fans, and the proportion of tourists affected by tourism tax on the overall score of the model is predictable and controllable. The changes in these parameters are all within an acceptable range, which confirms the reliability of the model's predictions.
+%-----------------------------------------------------------------------------------
+
+
+\section{Apply the Model to the other Scenarios}
+
+In this section, we apply the multi-objective optimization model developed for Juneau to analyze the tourism dynamics of Barcelona. Given Barcelona's prominence as a major tourist destination in Europe, the model will allow us to explore how different policy interventions can affect the city's tourism revenue, environmental sustainability, and long-term growth. By adapting the model to the specific conditions of Barcelona, we aim to assess whether similar strategies used for Juneau can be effective, or if adjustments need to be made to fit the unique characteristics of Barcelona's tourism industry.
+
+Barcelona, like Juneau, experiences significant tourism revenue, but its tourism profile differs in several key areas. Unlike Juneau, where cruise tourism plays a dominant role, Barcelona attracts a more diverse array of tourists, including those arriving by air, train, and sea. In addition, the city's tourism infrastructure is heavily focused on cultural and historical attractions, as well as its world-famous beaches and culinary experiences. The presence of a large number of small and medium-sized hotels, restaurants, and entertainment venues means that the model must account for different types of emissions, as well as distinct promotional strategies.
+
+\subsection{Data Preparation} % 数据准备
+
+To apply the model to Barcelona, some adjustments are required. First, we prepare the data\cite{Barcelona2023Report}. We collect visitor data from 1990 to 2018 and use the model matched to the number of people in Section 5 to fit Barcelona's tourism demographics to estimate the number of visitors per year. The results show that the curve model we previously sought can simulate other changes in visitor numbers well. The city's tourism board and local government agencies can provide data on annual arrivals,
+with specific breakdowns for different travel modes\cite{crespi2021satisfying}.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=12cm]{Tourists Visiting Barcelona.pdf}
+    \caption{CTourists Visiting Barcelona,1990-2018} \label{apply}
+\end{figure}
+
+
+\subsection{Model Application} % 模型应用
+
+Barcelona currently levies a tourism tax on visitors, 
+with the revenue used for local services and infrastructure\cite{Euronews2024}. We will evaluate how this tax can be optimized in combination with influencer marketing and other promotional strategies to increase the city's tourism revenue while maintaining a sustainable environmental footprint.
+
+The model evaluates the impacts of tourism revenue, environmental sustainability, and local community well-being. The model will be used to determine the best policy scenario for Barcelona, which is based on a weighted sum of scores for each component, including tourism revenue, environmental impact, and social well-being.
+
+By applying the model to Barcelona, we expect to identify several key trends:
+By adjusting tax rates, promotional spending, and sustainability initiatives, we can predict how these variables will affect the city’s overall tourism revenue. The model will assess the carbon emissions associated with different tourism activities, providing insights into the sustainability of various policy scenarios. As in Juno, it is imperative to ensure that tourism strategies benefit not only the city’s economy, but also the local population. The model will assess how the selected policies affect local residents’ satisfaction with tourism levels and job opportunities.
+
+\subsection{Results and Discussion} % 结果与讨论
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=12cm]{Forteen-year optimal scores for Barcelona.pdf}
+    \caption{Forteen-year optimal scores for Barcelona} \label{barcelona}
+\end{figure}
+
+The results are shown in the figure above. The optimal tourism tax obtained by our model analysis is \$16.7153, and the 2023 data will be implemented with \$13.04852\cite{Barcelona2023}, which is consistent. By comparing the results of the Barcelona model with the Juno survey results, we can gain valuable insights into the broader applicability of our multi-objective optimization method. This comparative analysis will highlight the similarities and differences between the tourism dynamics of the two cities, and we help Barcelona's policymakers to improve their strategy for balancing tourism growth with environmental sustainability.
+%-----------------------------------------------------------------------------------
+
+\section{Model Evaluation and Further Discussion}
+
+\subsection{Strength}
+
+\begin{itemize}
+\item Our model comprehensively considers economic benefits, environmental costs, social satisfaction and other aspects, comprehensively evaluates the impact of tourism on Juneau, and helps decision makers make comprehensive management decisions.
+
+\item Our model is highly scalable and can be customized to adapt to different policy goals and priorities by adjusting the weights of various factors (such as economic benefits, environmental protection, and social satisfaction).
+
+\item Taking into account the changes in external factors, our model will dynamically adjust according to changes in external factors (such as the number of tourists, tax rates, and environmental protection investment), provide real-time feedback and help predict future trends.
+
+\item Our model relies on real data for calculation and prediction, accurately reflects the specific situation of Juneau's tourism industry, and avoids the shortcomings of relying on assumptions or rough estimates.
+
+\item Our model is quite robust because we have made careful corrections and detailed sensitivity analysis based on actual conditions.
+\end{itemize}
+
+\subsection{Weakness}
+
+\begin{itemize}
+\item The effectiveness of the model relies heavily on accurate and sufficient historical data. If the data is of poor quality or contains significant errors, the accuracy of the model's predictions may decline.
+
+\item Calculating social satisfaction involves subjective assessments and factors that are difficult to quantify, which may cause the model results to differ from the actual situation.
+\end{itemize}
+
+\subsection{Conclusion}
+
+To predict future trends in tourism revenue in Juneau, Alaska, this paper proposes a comprehensive multi-objective optimization model that balances environmental sustainability, economic growth, and the effectiveness of promotional strategies.
+
+Data were collected through previous studies and government reports, sorted and preprocessed, and many parameters were obtained that can be directly applied to the model. First, the number of tourists in Juneau was analyzed and fitted, and then economic income, carbon emissions, glacier melt, and social satisfaction were discussed. Each part was scored and the total score was calculated by weighting as the model evaluation criterion. We used the model to analyze and predict the situation in Juneau and optimize the policy options for Juneau's tourism outcomes, which combined the direct and indirect effects of different strategies. The results show that policies such as reducing the number of tourists, increasing tourism taxes, increasing investment in environmental protection, community building, and strategic promotion through influential people can significantly improve Juneau's overall tourism experience. The sensitivity analysis conducted in this study confirmed that the model is stable and robust, and reasonable changes in key parameters lead to controllable changes in the overall results. This shows that the predictions of the model can be relied on to guide future tourism development strategies. Furthermore, the flexibility of the model allows it to be adapted to different scenarios and geographical contexts, providing valuable insights for other regions with similar tourism dynamics.
+
+%-----------------------------------------------------------------
+% References
+
+\printbibliography
+
+\newpage
+
+%-------------------------------------------------------------------
+% Memo
+
+\section{Memo}
+
+\noindent To: Juneau Tourism Council
+
+\noindent From: Team 2513021
+
+\noindent Date: {\today}
+
+\noindent Subject: Tips and insights for increasing cruise tourism in Juneau
+
+We examined the current situation in Juneau and built models that show that without intervention, the negative impacts of tourism are likely to increase. Overcrowding, strained infrastructure leading to increased resident dissatisfaction, and environmental degradation (such as the accelerated retreat of the Mendenhall Glacier) will continue. However, implementing the right policies can reverse this trend. By 2050, with optimized policies, we expect increased economic revenue, enhanced environmental sustainability, and improved social satisfaction. These include:
+
+\begin{itemize}
+\item Increase investment in environmental protection, which can reduce carbon emissions and slow down glacier melting
+\item Increase investment in the promotion of other attractions to attract more tourists
+\item Appropriately increase tourism taxes to increase additional tax revenue
+\item Appropriately reduce the number of tourists to improve residents' satisfaction
+\end{itemize}
+
+Thus achieving sustainable development of long-term economic growth, environmental protection, and social satisfaction.
+
+Here we explain the effects of various measures. Implementing a tourism tax can generate additional revenue. By 2050, a \$60 tourism tax plus appropriate income distribution can promote attractions, invest in environmental protection, and improve social satisfaction. After 2050, a \$40 tax plus an adjusted investment strategy can still support sustainable development. Investing in the environment: Investing 50\% of additional tax revenue in the environment before 2050 and 75\% after 2050 can reduce carbon emissions and slow down glacier melting. This can protect Juneau's natural beauty, which is the main factor attracting tourists. Investing in advertising, such as promoting whale watching and rainforests, can diversify tourist attractions. Advertising costs of \$300,000 per year before 2050 and \$700,000 per year after 2050 could help attract more visitors, especially as the impact of melting glaciers could change the tourism landscape. Limiting the number of cruise ships that can dock at the port (five per day before 2050 and three per day after 2050) could reduce overcrowding, improve environmental conditions and satisfaction among local residents.
+
+Finally, we offer optimization recommendations. 1) Increase outreach by working with influential people interested in nature and sustainability to increase publicity. 2) Dedicate a larger portion of tax revenue to environmental protection, given the growing demand for sustainable tourism. 3) Use tax revenue to create more conservation-related jobs and social programs. This will not only benefit the local community, but will also enhance interaction between visitors and residents and improve the overall visitor experience.
+
+By implementing these measures, Juneau can optimize its tourism industry and achieve a balance between economic prosperity, environmental protection, and community well-being. We look forward to working with the Tourism Commission to put these strategies into practice.
+%-------------------------------------------------------
+% % Appendix
+
+% \newpage
+
+% \begin{appendices}
+
+% \section{First appendix}
+
+% In addition, your report must include a letter to the Chief Financial Officer 
+% (CFO) of the Goodgrant Foundation, Mr. Alpha Chiang, that describes the optimal 
+% investment strategy, your modeling approach and major results, and a brief 
+
+
+% \textbf{\textcolor[rgb]{0.98,0.00,0.00}{Input matlab source:}}
+% \lstinputlisting[language=Matlab]{./code/mcmthesis-matlab1.m}
+
+% \section{Second appendix}
+
+% some more text \textcolor[rgb]{0.98,0.00,0.00}{\textbf{Input C++ source:}}
+% \lstinputlisting[language=C++]{./code/mcmthesis-sudoku.cpp}
+
+% \end{appendices}
+
+\newpage
+\newcounter{lastpage}
+\setcounter{lastpage}{\value{page}}
+\thispagestyle{empty} 
+
+\section*{Report on Use of AI}
+
+\begin{enumerate}
+\item OpenAI ChatGPT (Nov 5, 2023 version, ChatGPT-4,) 
+\begin{description}
+\item[Query1:] After a travel influencer promotes this attraction, what percentage of their fans can be brought to this attraction as tourists?
+\item[Output:] The percentage of a travel influencer's fans who actually visit a tourist attraction after being exposed to the influencer's promotion can vary widely, depending on multiple factors like the influencer's engagement rate, the appeal of the attraction, the marketing strategy, and the demographics of the influencer’s audience. However, based on industry trends and research studies, we can estimate a typical conversion rate from influencer marketing for tourist attractions.
+General Conversion Rates:
+1.Influencer Marketing Industry Standards:
+On average, influencer marketing conversion rates (i.e., the percentage of followers who take action, such as booking a trip or visiting a destination) tend to be in the range of 1\% to 5\%. This varies based on the influencer’s niche, engagement level, and the type of call to action (CTA) included in the post.
+2.High-Engagement Influencers:
+oFor influencers with highly engaged audiences, particularly those in the travel niche, conversion rates can rise higher. For example, a well-followed influencer with an engaged community could have conversion rates closer to 3\% - 7\%.
+oInfluencers in the 1 million+ followers range may see higher conversion rates due to their more loyal and trusting audience.
+3.Impact of Campaign Type:
+oSponsored posts: A typical influencer post where they promote a location may generate a 1\% to 3\% conversion rate.
+oInfluencer-hosted trips or events: When influencers lead or organize exclusive trips (e.g., a special tour or event), the conversion rate can be higher, potentially reaching 5\% or more as the followers feel more personally invited and involved.
+Example: Iceland's Influencer Campaigns
+Iceland's Example: When Iceland's tourism board worked with influencers on campaigns like "Inspired by Iceland," they noted a significant increase in visitor numbers. Studies suggest that campaigns involving influencers, especially when they create engaging content like travel vlogs or photos, can result in around 2\% to 5\% of an influencer's followers making plans to visit the destination.
+Instagram Influencers: For example, popular Instagram influencers showcasing Iceland’s landscapes may result in approximately 3-5\% of their audience deciding to visit Iceland in the short-to-medium term.
+Other Examples of Influencer-Driven Tourism:
+1.Maldives: When influencers posted about their luxurious experiences in the Maldives, the conversion rate of visitors directly driven by influencer promotions was found to be 2-4\%.
+2.Bali: Influencers promoting Bali, particularly its unique beaches and culture, saw a 2-5\% conversion rate among their followers, as the destination appealed to the influencer’s audience looking for exotic travel experiences.
+Factors Affecting the Conversion Rate:
+Audience Engagement: More engaged followers are more likely to take action. Engagement is measured by likes, comments, shares, and the quality of interactions.
+Content Type: High-quality, authentic content that resonates with the audience (e.g., behind-the-scenes videos, travel vlogs, or immersive experiences) tends to result in higher conversion rates.
+Call to Action: Including promotional codes, special offers, or personalized discount links can drive higher conversion rates.
+Exclusivity: Offering followers access to exclusive events or experiences can also improve conversion rates, especially for influencers with a dedicated fanbase.
+Summary:
+The percentage of an influencer's fans who end up visiting the tourist attraction after being promoted can range between 1\% and 5\%, with higher engagement and well-executed campaigns possibly pushing this figure closer to 7\% or more, depending on the appeal of the destination and the influencer’s relationship with their audience.
+If you have a specific influencer in mind or need more targeted examples, I can help further explore the topic!
+\end{description}
+\item OpenAI Ernie (Nov 5, 2023 version, Ernie 4.0) 
+\begin{description}
+\item[Query1:] The main content of the influencer is to travel and share their lives. The number of fans on Tiktok should be around 5 million, the number of fans on Instagram influencers should be around 100 million, and the number of fans on YouTube should be around 3 million. Please tell me the approximate promotion cost.
+\item[Output:] Based on the specific influencer information you provided, we can estimate the approximate promotion fee range:
+1. **TikTok (5 million followers)**
+For TikTok influencers with 5 million followers, the fees usually vary depending on the complexity of the content created and the brand requirements. Generally speaking, the fees for million-level influencers on TikTok are lower, but if it is an influencer with 5 million followers, the fees will be roughly:
+- **\$10,000 - \$30,000** (single video or promotional post)
+- TikTok is mainly short videos, which are relatively simple to produce, and the form of cooperation with brands is relatively flexible, which is usually more suitable for rapid promotion.
+
+2. **Instagram (100 million followers)**
+Influencers with 100 million followers on Instagram usually charge extremely high fees, especially for travel and lifestyle content, which can attract a large number of users' attention. For this level of influencer, the promotion fee may be higher. Generally speaking, the cost of an influencer on Instagram is:
+- **\$500,000 - \$2,000,000** (single promotional post)
+- Influencers with 100 million followers are top-tier influencers, and their content production also requires a higher budget, so the cost can be very high, especially if custom content or high-quality videos/photos are required.
+3. **YouTube (3 million followers)**
+Influencer fees on YouTube are generally higher because video content production requires more time and resources. For a YouTuber with 3 million followers, the cost will vary depending on the length and complexity of the video, and the estimated cost range is roughly:
+- **\$30,000 - \$100,000** (single video promotion)
+- YouTube videos are generally longer and more difficult to produce, requiring more time and budget, especially for travel content, where influencers usually spend more time on filming and post-production.
+
+Summary:
+- **TikTok (5 million followers)**: Approximately **\$10,000 - \$30,000** per promotion.
+- **Instagram (100 million followers)**: Approximately **\$500,000 - \$2,000,000** per promotion.
+- **YouTube (3 million followers)**: Approximately **\$30,000 - \$100,000** per promotion.
+
+These fees may vary depending on the specific form of cooperation, content type and creative requirements. If it is brand-customized content or long-term cooperation, the fee may be higher. The charging standards of top influencers usually vary depending on the market demand of the brand and the bargaining power of the influencer itself.
+\end{description}
+
+\end{enumerate}
+
+% 重置页码
+\clearpage
+\setcounter{page}{\value{lastpage}}
+
+\end{document}

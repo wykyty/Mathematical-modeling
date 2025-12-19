@@ -1,0 +1,231 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{apa/apasortcite//global/global}
+    \entry{chorley2020application}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=5217ca6b1cb696318e4ac770e83ade59}{%
+           family={Chorley},
+           familyi={C\bibinitperiod},
+           given={Alan},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=fc80b2f4ca63ee84299e965acc08f705}{%
+           family={Lamb},
+           familyi={L\bibinitperiod},
+           given={Kevin\bibnamedelima L},
+           giveni={K\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {MDPI}%
+      }
+      \strng{namehash}{f67306b41ba72d91b15196f258904eac}
+      \strng{fullhash}{f67306b41ba72d91b15196f258904eac}
+      \strng{bibnamehash}{f67306b41ba72d91b15196f258904eac}
+      \strng{authorbibnamehash}{f67306b41ba72d91b15196f258904eac}
+      \strng{authornamehash}{f67306b41ba72d91b15196f258904eac}
+      \strng{authorfullhash}{f67306b41ba72d91b15196f258904eac}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Sports}
+      \field{number}{9}
+      \field{title}{The application of critical power, the work capacity above critical power (W'), and its reconstitution: a narrative review of current evidence and implications for cycling training prescription}
+      \field{volume}{8}
+      \field{year}{2020}
+      \field{pages}{123}
+      \range{pages}{1}
+    \endentry
+    \entry{pugh2022critical}{article}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=c5017be85113eae4fccc30e4587c3796}{%
+           family={Pugh},
+           familyi={P\bibinitperiod},
+           given={Charles\bibnamedelima F},
+           giveni={C\bibinitperiod\bibinitdelim F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c290bc57eb797441ff3c12248b742886}{%
+           family={Beaven},
+           familyi={B\bibinitperiod},
+           given={C\bibnamedelima Martyn},
+           giveni={C\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ad57f2ec454dabc94a6ae5a0777a4d11}{%
+           family={Ferguson},
+           familyi={F\bibinitperiod},
+           given={Richard\bibnamedelima A},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=704ed0775c65ac0a10249db5f96d5dc7}{%
+           family={Driller},
+           familyi={D\bibinitperiod},
+           given={Matthew\bibnamedelima W},
+           giveni={M\bibinitperiod\bibinitdelim W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=551e2ce380decce469919d29b228ae89}{%
+           family={Palmer},
+           familyi={P\bibinitperiod},
+           given={Craig\bibnamedelima D},
+           giveni={C\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a8021ca687a93994aeddce75497b47fd}{%
+           family={Paton},
+           familyi={P\bibinitperiod},
+           given={Carl\bibnamedelima D},
+           giveni={C\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Human Kinetics}%
+      }
+      \strng{namehash}{ec8d7f208cb1599884c7534661e6beba}
+      \strng{fullhash}{b54e006a13ab8662742e1b196fae5cb1}
+      \strng{bibnamehash}{b54e006a13ab8662742e1b196fae5cb1}
+      \strng{authorbibnamehash}{b54e006a13ab8662742e1b196fae5cb1}
+      \strng{authornamehash}{ec8d7f208cb1599884c7534661e6beba}
+      \strng{authorfullhash}{b54e006a13ab8662742e1b196fae5cb1}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International journal of sports physiology and performance}
+      \field{number}{11}
+      \field{title}{Critical power, work capacity, and recovery characteristics of team-pursuit cyclists}
+      \field{volume}{17}
+      \field{year}{2022}
+      \field{pages}{1606\bibrangedash 1613}
+      \range{pages}{8}
+    \endentry
+  \enddatalist
+  \datalist[entry]{apa/global//global/global}
+    \entry{chorley2020application}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=5217ca6b1cb696318e4ac770e83ade59}{%
+           family={Chorley},
+           familyi={C\bibinitperiod},
+           given={Alan},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=fc80b2f4ca63ee84299e965acc08f705}{%
+           family={Lamb},
+           familyi={L\bibinitperiod},
+           given={Kevin\bibnamedelima L},
+           giveni={K\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {MDPI}%
+      }
+      \strng{namehash}{f67306b41ba72d91b15196f258904eac}
+      \strng{fullhash}{f67306b41ba72d91b15196f258904eac}
+      \strng{bibnamehash}{f67306b41ba72d91b15196f258904eac}
+      \strng{authorbibnamehash}{f67306b41ba72d91b15196f258904eac}
+      \strng{authornamehash}{f67306b41ba72d91b15196f258904eac}
+      \strng{authorfullhash}{f67306b41ba72d91b15196f258904eac}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Sports}
+      \field{number}{9}
+      \field{title}{The application of critical power, the work capacity above critical power (W'), and its reconstitution: a narrative review of current evidence and implications for cycling training prescription}
+      \field{volume}{8}
+      \field{year}{2020}
+      \field{pages}{123}
+      \range{pages}{1}
+    \endentry
+    \entry{pugh2022critical}{article}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=c5017be85113eae4fccc30e4587c3796}{%
+           family={Pugh},
+           familyi={P\bibinitperiod},
+           given={Charles\bibnamedelima F},
+           giveni={C\bibinitperiod\bibinitdelim F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c290bc57eb797441ff3c12248b742886}{%
+           family={Beaven},
+           familyi={B\bibinitperiod},
+           given={C\bibnamedelima Martyn},
+           giveni={C\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ad57f2ec454dabc94a6ae5a0777a4d11}{%
+           family={Ferguson},
+           familyi={F\bibinitperiod},
+           given={Richard\bibnamedelima A},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=704ed0775c65ac0a10249db5f96d5dc7}{%
+           family={Driller},
+           familyi={D\bibinitperiod},
+           given={Matthew\bibnamedelima W},
+           giveni={M\bibinitperiod\bibinitdelim W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=551e2ce380decce469919d29b228ae89}{%
+           family={Palmer},
+           familyi={P\bibinitperiod},
+           given={Craig\bibnamedelima D},
+           giveni={C\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a8021ca687a93994aeddce75497b47fd}{%
+           family={Paton},
+           familyi={P\bibinitperiod},
+           given={Carl\bibnamedelima D},
+           giveni={C\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Human Kinetics}%
+      }
+      \strng{namehash}{ec8d7f208cb1599884c7534661e6beba}
+      \strng{fullhash}{b54e006a13ab8662742e1b196fae5cb1}
+      \strng{bibnamehash}{b54e006a13ab8662742e1b196fae5cb1}
+      \strng{authorbibnamehash}{b54e006a13ab8662742e1b196fae5cb1}
+      \strng{authornamehash}{ec8d7f208cb1599884c7534661e6beba}
+      \strng{authorfullhash}{b54e006a13ab8662742e1b196fae5cb1}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International journal of sports physiology and performance}
+      \field{number}{11}
+      \field{title}{Critical power, work capacity, and recovery characteristics of team-pursuit cyclists}
+      \field{volume}{17}
+      \field{year}{2022}
+      \field{pages}{1606\bibrangedash 1613}
+      \range{pages}{8}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

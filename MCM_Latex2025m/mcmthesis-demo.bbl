@@ -1,0 +1,726 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{VanderNaald02012020}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=f558a8b278965ec5e8e839a1111bd1a8}{%
+           family={Naald},
+           familyi={N\bibinitperiod},
+           given={Brian\bibnamedelima Vander},
+           giveni={B\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Routledge}%
+      }
+      \strng{namehash}{f558a8b278965ec5e8e839a1111bd1a8}
+      \strng{fullhash}{f558a8b278965ec5e8e839a1111bd1a8}
+      \strng{fullhashraw}{f558a8b278965ec5e8e839a1111bd1a8}
+      \strng{bibnamehash}{f558a8b278965ec5e8e839a1111bd1a8}
+      \strng{authorbibnamehash}{f558a8b278965ec5e8e839a1111bd1a8}
+      \strng{authornamehash}{f558a8b278965ec5e8e839a1111bd1a8}
+      \strng{authorfullhash}{f558a8b278965ec5e8e839a1111bd1a8}
+      \strng{authorfullhashraw}{f558a8b278965ec5e8e839a1111bd1a8}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Tourism Recreation Research}
+      \field{number}{1}
+      \field{title}{Examining tourist preferences to slow glacier loss: evidence from Alaska}
+      \field{volume}{45}
+      \field{year}{2020}
+      \field{pages}{107\bibrangedash 117}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1080/02508281.2019.1606978
+      \endverb
+      \verb{eprint}
+      \verb https://doi.org/10.1080/02508281.2019.1606978
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1080/02508281.2019.1606978
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1080/02508281.2019.1606978
+      \endverb
+    \endentry
+    \entry{mckercher2003sustainable}{inproceedings}{}{}
+      \name{author}{1}{}{%
+        {{hash=53ee1fbf85d75c6a4ef31df3ca5250ed}{%
+           family={McKercher},
+           familyi={M\bibinitperiod},
+           given={Bob},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{53ee1fbf85d75c6a4ef31df3ca5250ed}
+      \strng{fullhash}{53ee1fbf85d75c6a4ef31df3ca5250ed}
+      \strng{fullhashraw}{53ee1fbf85d75c6a4ef31df3ca5250ed}
+      \strng{bibnamehash}{53ee1fbf85d75c6a4ef31df3ca5250ed}
+      \strng{authorbibnamehash}{53ee1fbf85d75c6a4ef31df3ca5250ed}
+      \strng{authornamehash}{53ee1fbf85d75c6a4ef31df3ca5250ed}
+      \strng{authorfullhash}{53ee1fbf85d75c6a4ef31df3ca5250ed}
+      \strng{authorfullhashraw}{53ee1fbf85d75c6a4ef31df3ca5250ed}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{National seminar on sustainable tourism development}
+      \field{number}{10}
+      \field{title}{Sustainable tourism development-guiding principles for planning and management}
+      \field{volume}{1}
+      \field{year}{2003}
+    \endentry
+    \entry{unep2018}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=77e735bae2840b83aacd3c4ad7e795a0}{%
+           family={Programme},
+           familyi={P\bibinitperiod},
+           given={United\bibnamedelimb Nations\bibnamedelima Environment},
+           giveni={U\bibinitperiod\bibinitdelim N\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \strng{namehash}{77e735bae2840b83aacd3c4ad7e795a0}
+      \strng{fullhash}{77e735bae2840b83aacd3c4ad7e795a0}
+      \strng{fullhashraw}{77e735bae2840b83aacd3c4ad7e795a0}
+      \strng{bibnamehash}{77e735bae2840b83aacd3c4ad7e795a0}
+      \strng{authorbibnamehash}{77e735bae2840b83aacd3c4ad7e795a0}
+      \strng{authornamehash}{77e735bae2840b83aacd3c4ad7e795a0}
+      \strng{authorfullhash}{77e735bae2840b83aacd3c4ad7e795a0}
+      \strng{authorfullhashraw}{77e735bae2840b83aacd3c4ad7e795a0}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Sustainable Tourism: Towards a Green Economy}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://www.unep.org
+      \endverb
+      \verb{url}
+      \verb https://www.unep.org
+      \endverb
+    \endentry
+    \entry{gossling2015}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=96637ffc7520f5ac0f9eae1e14820ceb}{%
+           family={Gössling},
+           familyi={G\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=712473069b557343b72e32525ab44df2}{%
+           family={Peeters},
+           familyi={P\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Routledge}%
+      }
+      \strng{namehash}{c8cd9a1483459156f585e5931d15909c}
+      \strng{fullhash}{c8cd9a1483459156f585e5931d15909c}
+      \strng{fullhashraw}{c8cd9a1483459156f585e5931d15909c}
+      \strng{bibnamehash}{c8cd9a1483459156f585e5931d15909c}
+      \strng{authorbibnamehash}{c8cd9a1483459156f585e5931d15909c}
+      \strng{authornamehash}{c8cd9a1483459156f585e5931d15909c}
+      \strng{authorfullhash}{c8cd9a1483459156f585e5931d15909c}
+      \strng{authorfullhashraw}{c8cd9a1483459156f585e5931d15909c}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{The Routledge Handbook of Tourism and the Environment}
+      \field{title}{Assessing Tourism's Carbon Footprint}
+      \field{year}{2015}
+      \verb{urlraw}
+      \verb https://www.routledge.com
+      \endverb
+      \verb{url}
+      \verb https://www.routledge.com
+      \endverb
+    \endentry
+    \entry{unwto2020}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=62ee3640e3dc6484375d4e90383f8004}{%
+           family={Organization},
+           familyi={O\bibinitperiod},
+           given={The\bibnamedelimb World\bibnamedelima Tourism},
+           giveni={T\bibinitperiod\bibinitdelim W\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+      }
+      \strng{namehash}{62ee3640e3dc6484375d4e90383f8004}
+      \strng{fullhash}{62ee3640e3dc6484375d4e90383f8004}
+      \strng{fullhashraw}{62ee3640e3dc6484375d4e90383f8004}
+      \strng{bibnamehash}{62ee3640e3dc6484375d4e90383f8004}
+      \strng{authorbibnamehash}{62ee3640e3dc6484375d4e90383f8004}
+      \strng{authornamehash}{62ee3640e3dc6484375d4e90383f8004}
+      \strng{authorfullhash}{62ee3640e3dc6484375d4e90383f8004}
+      \strng{authorfullhashraw}{62ee3640e3dc6484375d4e90383f8004}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Tourism and Local Communities}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://www.unwto.org
+      \endverb
+      \verb{url}
+      \verb https://www.unwto.org
+      \endverb
+    \endentry
+    \entry{Lee2018}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=c0d3fffd0614b59cbcc8f322cb2a4dae}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{c0d3fffd0614b59cbcc8f322cb2a4dae}
+      \strng{fullhash}{c0d3fffd0614b59cbcc8f322cb2a4dae}
+      \strng{fullhashraw}{c0d3fffd0614b59cbcc8f322cb2a4dae}
+      \strng{bibnamehash}{c0d3fffd0614b59cbcc8f322cb2a4dae}
+      \strng{authorbibnamehash}{c0d3fffd0614b59cbcc8f322cb2a4dae}
+      \strng{authornamehash}{c0d3fffd0614b59cbcc8f322cb2a4dae}
+      \strng{authorfullhash}{c0d3fffd0614b59cbcc8f322cb2a4dae}
+      \strng{authorfullhashraw}{c0d3fffd0614b59cbcc8f322cb2a4dae}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Tourism Management Perspectives}
+      \field{title}{The Impact of Cruise Tourism on Local Economies}
+      \field{volume}{25}
+      \field{year}{2018}
+      \field{pages}{42\bibrangedash 49}
+      \range{pages}{8}
+    \endentry
+    \entry{McDowell2017-2}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=1129a735f1bb25ea84cdf008d7b39d00}{%
+           family={McDowell},
+           familyi={M\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Juneau Economic Development Council}%
+      }
+      \strng{namehash}{1129a735f1bb25ea84cdf008d7b39d00}
+      \strng{fullhash}{1129a735f1bb25ea84cdf008d7b39d00}
+      \strng{fullhashraw}{1129a735f1bb25ea84cdf008d7b39d00}
+      \strng{bibnamehash}{1129a735f1bb25ea84cdf008d7b39d00}
+      \strng{authorbibnamehash}{1129a735f1bb25ea84cdf008d7b39d00}
+      \strng{authornamehash}{1129a735f1bb25ea84cdf008d7b39d00}
+      \strng{authorfullhash}{1129a735f1bb25ea84cdf008d7b39d00}
+      \strng{authorfullhashraw}{1129a735f1bb25ea84cdf008d7b39d00}
+      \field{extraname}{1}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2025-01-23}
+      \field{title}{Tourism and Economic Impact in Juneau, Alaska}
+      \field{year}{2017}
+    \endentry
+    \entry{CLAAK2024}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=d7039cfffaa4096817b427fe1d981518}{%
+           family={Alaska},
+           familyi={A\bibinitperiod},
+           given={CLAA},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{d7039cfffaa4096817b427fe1d981518}
+      \strng{fullhash}{d7039cfffaa4096817b427fe1d981518}
+      \strng{fullhashraw}{d7039cfffaa4096817b427fe1d981518}
+      \strng{bibnamehash}{d7039cfffaa4096817b427fe1d981518}
+      \strng{authorbibnamehash}{d7039cfffaa4096817b427fe1d981518}
+      \strng{authornamehash}{d7039cfffaa4096817b427fe1d981518}
+      \strng{authorfullhash}{d7039cfffaa4096817b427fe1d981518}
+      \strng{authorfullhashraw}{d7039cfffaa4096817b427fe1d981518}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2025-01-23}
+      \field{title}{Juneau 2024 Report}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://claalaska.com/wp-content/uploads/2024/03/JNU-Juneau-2024.pdf
+      \endverb
+      \verb{url}
+      \verb https://claalaska.com/wp-content/uploads/2024/03/JNU-Juneau-2024.pdf
+      \endverb
+    \endentry
+    \entry{McDowell2017}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=d91649acd857b892a939369c44b3fa9b}{%
+           family={Group},
+           familyi={G\bibinitperiod},
+           given={McDowell},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{d91649acd857b892a939369c44b3fa9b}
+      \strng{fullhash}{d91649acd857b892a939369c44b3fa9b}
+      \strng{fullhashraw}{d91649acd857b892a939369c44b3fa9b}
+      \strng{bibnamehash}{d91649acd857b892a939369c44b3fa9b}
+      \strng{authorbibnamehash}{d91649acd857b892a939369c44b3fa9b}
+      \strng{authornamehash}{d91649acd857b892a939369c44b3fa9b}
+      \strng{authorfullhash}{d91649acd857b892a939369c44b3fa9b}
+      \strng{authorfullhashraw}{d91649acd857b892a939369c44b3fa9b}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2025-01-23}
+      \field{title}{Juneau Visitor Profile and Economic Impact Report}
+      \field{year}{2017}
+      \verb{urlraw}
+      \verb https://akcruise.org/wp-content/uploads/2018/04/McDowell-Group-Juneau-Visitor-Profile-and-Economic-Impact-Report-10-2-2017.pdf
+      \endverb
+      \verb{url}
+      \verb https://akcruise.org/wp-content/uploads/2018/04/McDowell-Group-Juneau-Visitor-Profile-and-Economic-Impact-Report-10-2-2017.pdf
+      \endverb
+    \endentry
+    \entry{CBJ2024}{misc}{}{}
+      \name{author}{2}{}{%
+        {{hash=57d056ed0984166336b7879c2af3657f}{%
+           family={City},
+           familyi={C\bibinitperiod}}}%
+        {{hash=091116811c4c0a7009eb2ee277557309}{%
+           family={Juneau\bibnamedelima (CBJ)},
+           familyi={J\bibinitperiod\bibinitdelim (\bibinitperiod},
+           given={Borough},
+           giveni={B\bibinitperiod},
+           prefix={of},
+           prefixi={o\bibinitperiod}}}%
+      }
+      \strng{namehash}{412e63e31d5ce8a403fd938a822e27cc}
+      \strng{fullhash}{412e63e31d5ce8a403fd938a822e27cc}
+      \strng{fullhashraw}{412e63e31d5ce8a403fd938a822e27cc}
+      \strng{bibnamehash}{412e63e31d5ce8a403fd938a822e27cc}
+      \strng{authorbibnamehash}{412e63e31d5ce8a403fd938a822e27cc}
+      \strng{authornamehash}{412e63e31d5ce8a403fd938a822e27cc}
+      \strng{authorfullhash}{412e63e31d5ce8a403fd938a822e27cc}
+      \strng{authorfullhashraw}{412e63e31d5ce8a403fd938a822e27cc}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2025-01-23}
+      \field{title}{Cruise Impacts 2023 Report}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://juneau.org/wp-content/uploads/2024/01/CBJ-Cruise-Impacts-2023-Report-1.22.24.pdf
+      \endverb
+      \verb{url}
+      \verb https://juneau.org/wp-content/uploads/2024/01/CBJ-Cruise-Impacts-2023-Report-1.22.24.pdf
+      \endverb
+    \endentry
+    \entry{ATIA2023}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=35968c5087b90dc9ff484080c6a3f801}{%
+           family={(ATIA)},
+           familyi={(\bibinitperiod},
+           given={Alaska\bibnamedelimb Travel\bibnamedelimb Industry\bibnamedelima Association},
+           giveni={A\bibinitperiod\bibinitdelim T\bibinitperiod\bibinitdelim I\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{35968c5087b90dc9ff484080c6a3f801}
+      \strng{fullhash}{35968c5087b90dc9ff484080c6a3f801}
+      \strng{fullhashraw}{35968c5087b90dc9ff484080c6a3f801}
+      \strng{bibnamehash}{35968c5087b90dc9ff484080c6a3f801}
+      \strng{authorbibnamehash}{35968c5087b90dc9ff484080c6a3f801}
+      \strng{authornamehash}{35968c5087b90dc9ff484080c6a3f801}
+      \strng{authorfullhash}{35968c5087b90dc9ff484080c6a3f801}
+      \strng{authorfullhashraw}{35968c5087b90dc9ff484080c6a3f801}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2025-01-23}
+      \field{title}{Alaska Tourism Impact Modeling 2022-2023}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://www.alaskatia.org/sites/default/files/2023-12/ATIA%20Alaska%20Tourism%20Impact%20Modeling%202022-2023%20-%20FINAL.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.alaskatia.org/sites/default/files/2023-12/ATIA%20Alaska%20Tourism%20Impact%20Modeling%202022-2023%20-%20FINAL.pdf
+      \endverb
+    \endentry
+    \entry{Juneau2024Summer}{misc}{}{}
+      \name{author}{2}{}{%
+        {{hash=57d056ed0984166336b7879c2af3657f}{%
+           family={City},
+           familyi={C\bibinitperiod}}}%
+        {{hash=091116811c4c0a7009eb2ee277557309}{%
+           family={Juneau\bibnamedelima (CBJ)},
+           familyi={J\bibinitperiod\bibinitdelim (\bibinitperiod},
+           given={Borough},
+           giveni={B\bibinitperiod},
+           prefix={of},
+           prefixi={o\bibinitperiod}}}%
+      }
+      \strng{namehash}{412e63e31d5ce8a403fd938a822e27cc}
+      \strng{fullhash}{412e63e31d5ce8a403fd938a822e27cc}
+      \strng{fullhashraw}{412e63e31d5ce8a403fd938a822e27cc}
+      \strng{bibnamehash}{412e63e31d5ce8a403fd938a822e27cc}
+      \strng{authorbibnamehash}{412e63e31d5ce8a403fd938a822e27cc}
+      \strng{authornamehash}{412e63e31d5ce8a403fd938a822e27cc}
+      \strng{authorfullhash}{412e63e31d5ce8a403fd938a822e27cc}
+      \strng{authorfullhashraw}{412e63e31d5ce8a403fd938a822e27cc}
+      \field{extraname}{2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2025-01-23}
+      \field{title}{2024 Summer Visitor Season: What You Need to Know}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://juneau.org/newsroom-item/2024-summer-visitor-season-what-you-need-to-know
+      \endverb
+      \verb{url}
+      \verb https://juneau.org/newsroom-item/2024-summer-visitor-season-what-you-need-to-know
+      \endverb
+    \endentry
+    \entry{unwto2018}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=d31580cac45370adf249a784a12ecdc0}{%
+           family={UNWTO},
+           familyi={U\bibinitperiod}}}%
+      }
+      \strng{namehash}{d31580cac45370adf249a784a12ecdc0}
+      \strng{fullhash}{d31580cac45370adf249a784a12ecdc0}
+      \strng{fullhashraw}{d31580cac45370adf249a784a12ecdc0}
+      \strng{bibnamehash}{d31580cac45370adf249a784a12ecdc0}
+      \strng{authorbibnamehash}{d31580cac45370adf249a784a12ecdc0}
+      \strng{authornamehash}{d31580cac45370adf249a784a12ecdc0}
+      \strng{authorfullhash}{d31580cac45370adf249a784a12ecdc0}
+      \strng{authorfullhashraw}{d31580cac45370adf249a784a12ecdc0}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Tourism and Climate Change: Impacts, Adaptation, and Mitigation}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://www.unwto.org
+      \endverb
+      \verb{url}
+      \verb https://www.unwto.org
+      \endverb
+    \endentry
+    \entry{Juneau2024}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=c01e1e2b7cefe3867ea6f6b6ccaf4672}{%
+           family={Juneau},
+           familyi={J\bibinitperiod},
+           given={City},
+           giveni={C\bibinitperiod},
+           prefix={of},
+           prefixi={o\bibinitperiod}}}%
+      }
+      \strng{namehash}{c01e1e2b7cefe3867ea6f6b6ccaf4672}
+      \strng{fullhash}{c01e1e2b7cefe3867ea6f6b6ccaf4672}
+      \strng{fullhashraw}{c01e1e2b7cefe3867ea6f6b6ccaf4672}
+      \strng{bibnamehash}{c01e1e2b7cefe3867ea6f6b6ccaf4672}
+      \strng{authorbibnamehash}{c01e1e2b7cefe3867ea6f6b6ccaf4672}
+      \strng{authornamehash}{c01e1e2b7cefe3867ea6f6b6ccaf4672}
+      \strng{authorfullhash}{c01e1e2b7cefe3867ea6f6b6ccaf4672}
+      \strng{authorfullhashraw}{c01e1e2b7cefe3867ea6f6b6ccaf4672}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2025-01-23}
+      \field{title}{Juneau Visitor Circulator Study Final Report}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://juneau.org/wp-content/uploads/2024/02/Juneau-Visitor-Circulator-Study-Final-Report-2024-1.pdf
+      \endverb
+      \verb{url}
+      \verb https://juneau.org/wp-content/uploads/2024/02/Juneau-Visitor-Circulator-Study-Final-Report-2024-1.pdf
+      \endverb
+    \endentry
+    \entry{Nature2024}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=9a136ac35ce573b0bb8811a65c18a4dd}{%
+           family={Name(s)},
+           familyi={N\bibinitperiod},
+           given={Author(s)},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{9a136ac35ce573b0bb8811a65c18a4dd}
+      \strng{fullhash}{9a136ac35ce573b0bb8811a65c18a4dd}
+      \strng{fullhashraw}{9a136ac35ce573b0bb8811a65c18a4dd}
+      \strng{bibnamehash}{9a136ac35ce573b0bb8811a65c18a4dd}
+      \strng{authorbibnamehash}{9a136ac35ce573b0bb8811a65c18a4dd}
+      \strng{authornamehash}{9a136ac35ce573b0bb8811a65c18a4dd}
+      \strng{authorfullhash}{9a136ac35ce573b0bb8811a65c18a4dd}
+      \strng{authorfullhashraw}{9a136ac35ce573b0bb8811a65c18a4dd}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Nature Communications}
+      \field{note}{Accessed: 2025-01-23}
+      \field{title}{Title of the article}
+      \field{volume}{XX}
+      \field{year}{2024}
+      \field{pages}{XXX\bibrangedash XXX}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1038/s41467-024-54582-7
+      \endverb
+      \verb{urlraw}
+      \verb https://www.nature.com/articles/s41467-024-54582-7
+      \endverb
+      \verb{url}
+      \verb https://www.nature.com/articles/s41467-024-54582-7
+      \endverb
+    \endentry
+    \entry{Jones2020}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=540cdd13b96ebe8a6352345eccc518c6}{%
+           family={Jones},
+           familyi={J\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=1ed0af01c7f406bca8b79d0badb70f81}{%
+           family={Taylor},
+           familyi={T\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{1f9c75399fb1a16dbbd5dd4238c2b82e}
+      \strng{fullhash}{1f9c75399fb1a16dbbd5dd4238c2b82e}
+      \strng{fullhashraw}{1f9c75399fb1a16dbbd5dd4238c2b82e}
+      \strng{bibnamehash}{1f9c75399fb1a16dbbd5dd4238c2b82e}
+      \strng{authorbibnamehash}{1f9c75399fb1a16dbbd5dd4238c2b82e}
+      \strng{authornamehash}{1f9c75399fb1a16dbbd5dd4238c2b82e}
+      \strng{authorfullhash}{1f9c75399fb1a16dbbd5dd4238c2b82e}
+      \strng{authorfullhashraw}{1f9c75399fb1a16dbbd5dd4238c2b82e}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Tourism Studies}
+      \field{number}{2}
+      \field{title}{Tourism Employment Trends: Stability and Growth in Global Markets}
+      \field{volume}{18}
+      \field{year}{2020}
+      \field{pages}{112\bibrangedash 127}
+      \range{pages}{16}
+    \endentry
+    \entry{McDowell2017-3}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=9e44c273f723647284eb0143a6d7755b}{%
+           family={McDowell},
+           familyi={M\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{9e44c273f723647284eb0143a6d7755b}
+      \strng{fullhash}{9e44c273f723647284eb0143a6d7755b}
+      \strng{fullhashraw}{9e44c273f723647284eb0143a6d7755b}
+      \strng{bibnamehash}{9e44c273f723647284eb0143a6d7755b}
+      \strng{authorbibnamehash}{9e44c273f723647284eb0143a6d7755b}
+      \strng{authornamehash}{9e44c273f723647284eb0143a6d7755b}
+      \strng{authorfullhash}{9e44c273f723647284eb0143a6d7755b}
+      \strng{authorfullhashraw}{9e44c273f723647284eb0143a6d7755b}
+      \field{extraname}{2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Tourism and Community Development}
+      \field{number}{3}
+      \field{title}{Local Residents’ Perspectives on Tourism: A Case Study of Juneau, Alaska}
+      \field{volume}{22}
+      \field{year}{2017}
+      \field{pages}{144\bibrangedash 160}
+      \range{pages}{17}
+    \endentry
+    \entry{CBJTourism2023}{misc}{}{}
+      \name{author}{2}{}{%
+        {{hash=57d056ed0984166336b7879c2af3657f}{%
+           family={City},
+           familyi={C\bibinitperiod}}}%
+        {{hash=091116811c4c0a7009eb2ee277557309}{%
+           family={Juneau\bibnamedelima (CBJ)},
+           familyi={J\bibinitperiod\bibinitdelim (\bibinitperiod},
+           given={Borough},
+           giveni={B\bibinitperiod},
+           prefix={of},
+           prefixi={o\bibinitperiod}}}%
+      }
+      \strng{namehash}{412e63e31d5ce8a403fd938a822e27cc}
+      \strng{fullhash}{412e63e31d5ce8a403fd938a822e27cc}
+      \strng{fullhashraw}{412e63e31d5ce8a403fd938a822e27cc}
+      \strng{bibnamehash}{412e63e31d5ce8a403fd938a822e27cc}
+      \strng{authorbibnamehash}{412e63e31d5ce8a403fd938a822e27cc}
+      \strng{authornamehash}{412e63e31d5ce8a403fd938a822e27cc}
+      \strng{authorfullhash}{412e63e31d5ce8a403fd938a822e27cc}
+      \strng{authorfullhashraw}{412e63e31d5ce8a403fd938a822e27cc}
+      \field{extraname}{3}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2025-01-23}
+      \field{title}{Tourism Survey 2023 Report}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://juneau.org/wp-content/uploads/2023/12/CBJ-Tourism-Survey-2023-Report-12.11.23.pdf
+      \endverb
+      \verb{url}
+      \verb https://juneau.org/wp-content/uploads/2023/12/CBJ-Tourism-Survey-2023-Report-12.11.23.pdf
+      \endverb
+    \endentry
+    \entry{Barcelona2023Report}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=210d409a4fefc86612c69b6a2efcbf2c}{%
+           family={Barcelona},
+           familyi={B\bibinitperiod},
+           given={Ajuntament},
+           giveni={A\bibinitperiod},
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
+      }
+      \strng{namehash}{210d409a4fefc86612c69b6a2efcbf2c}
+      \strng{fullhash}{210d409a4fefc86612c69b6a2efcbf2c}
+      \strng{fullhashraw}{210d409a4fefc86612c69b6a2efcbf2c}
+      \strng{bibnamehash}{210d409a4fefc86612c69b6a2efcbf2c}
+      \strng{authorbibnamehash}{210d409a4fefc86612c69b6a2efcbf2c}
+      \strng{authornamehash}{210d409a4fefc86612c69b6a2efcbf2c}
+      \strng{authorfullhash}{210d409a4fefc86612c69b6a2efcbf2c}
+      \strng{authorfullhashraw}{210d409a4fefc86612c69b6a2efcbf2c}
+      \field{extraname}{1}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2025-01-23}
+      \field{title}{6378 - [Document Title]}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://bcnroc.ajuntament.barcelona.cat/jspui/bitstream/11703/91953/1/6378.pdf
+      \endverb
+      \verb{url}
+      \verb https://bcnroc.ajuntament.barcelona.cat/jspui/bitstream/11703/91953/1/6378.pdf
+      \endverb
+    \endentry
+    \entry{crespi2021satisfying}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=b747a41a4032f627add5a7c874f1a163}{%
+           family={Crespi-Vallbona},
+           familyi={C\bibinithyphendelim V\bibinitperiod},
+           given={Montserrat},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Taylor \& Francis}%
+      }
+      \strng{namehash}{b747a41a4032f627add5a7c874f1a163}
+      \strng{fullhash}{b747a41a4032f627add5a7c874f1a163}
+      \strng{fullhashraw}{b747a41a4032f627add5a7c874f1a163}
+      \strng{bibnamehash}{b747a41a4032f627add5a7c874f1a163}
+      \strng{authorbibnamehash}{b747a41a4032f627add5a7c874f1a163}
+      \strng{authornamehash}{b747a41a4032f627add5a7c874f1a163}
+      \strng{authorfullhash}{b747a41a4032f627add5a7c874f1a163}
+      \strng{authorfullhashraw}{b747a41a4032f627add5a7c874f1a163}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Heritage Tourism}
+      \field{number}{2}
+      \field{title}{Satisfying experiences: guided tours at cultural heritage sites}
+      \field{volume}{16}
+      \field{year}{2021}
+      \field{pages}{201\bibrangedash 217}
+      \range{pages}{17}
+    \endentry
+    \entry{Euronews2024}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=0184e252b5a7e44bd0340e93665c47c7}{%
+           family={Euronews},
+           familyi={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{0184e252b5a7e44bd0340e93665c47c7}
+      \strng{fullhash}{0184e252b5a7e44bd0340e93665c47c7}
+      \strng{fullhashraw}{0184e252b5a7e44bd0340e93665c47c7}
+      \strng{bibnamehash}{0184e252b5a7e44bd0340e93665c47c7}
+      \strng{authorbibnamehash}{0184e252b5a7e44bd0340e93665c47c7}
+      \strng{authornamehash}{0184e252b5a7e44bd0340e93665c47c7}
+      \strng{authorfullhash}{0184e252b5a7e44bd0340e93665c47c7}
+      \strng{authorfullhashraw}{0184e252b5a7e44bd0340e93665c47c7}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2025-01-23}
+      \field{title}{Barcelona is Increasing its Tourist Tax: Here’s How Much You’ll Have to Pay in 2023}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.euronews.com/travel/2024/07/01/barcelona-is-increasing-its-tourist-tax-heres-how-much-youll-have-to-pay-in-2023
+      \endverb
+      \verb{url}
+      \verb https://www.euronews.com/travel/2024/07/01/barcelona-is-increasing-its-tourist-tax-heres-how-much-youll-have-to-pay-in-2023
+      \endverb
+    \endentry
+    \entry{Barcelona2023}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=210d409a4fefc86612c69b6a2efcbf2c}{%
+           family={Barcelona},
+           familyi={B\bibinitperiod},
+           given={Ajuntament},
+           giveni={A\bibinitperiod},
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
+      }
+      \strng{namehash}{210d409a4fefc86612c69b6a2efcbf2c}
+      \strng{fullhash}{210d409a4fefc86612c69b6a2efcbf2c}
+      \strng{fullhashraw}{210d409a4fefc86612c69b6a2efcbf2c}
+      \strng{bibnamehash}{210d409a4fefc86612c69b6a2efcbf2c}
+      \strng{authorbibnamehash}{210d409a4fefc86612c69b6a2efcbf2c}
+      \strng{authornamehash}{210d409a4fefc86612c69b6a2efcbf2c}
+      \strng{authorfullhash}{210d409a4fefc86612c69b6a2efcbf2c}
+      \strng{authorfullhashraw}{210d409a4fefc86612c69b6a2efcbf2c}
+      \field{extraname}{2}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2025-01-23}
+      \field{title}{Anuari 2023}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://ajuntament.barcelona.cat/premsa/wp-content/uploads/2024/12/Anuari2023.pdf
+      \endverb
+      \verb{url}
+      \verb https://ajuntament.barcelona.cat/premsa/wp-content/uploads/2024/12/Anuari2023.pdf
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

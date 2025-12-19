@@ -1,0 +1,314 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{VanderNaald02012020}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=f558a8b278965ec5e8e839a1111bd1a8}{%
+           family={Naald},
+           familyi={N\bibinitperiod},
+           given={Brian\bibnamedelima Vander},
+           giveni={B\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Routledge}%
+      }
+      \strng{namehash}{f558a8b278965ec5e8e839a1111bd1a8}
+      \strng{fullhash}{f558a8b278965ec5e8e839a1111bd1a8}
+      \strng{fullhashraw}{f558a8b278965ec5e8e839a1111bd1a8}
+      \strng{bibnamehash}{f558a8b278965ec5e8e839a1111bd1a8}
+      \strng{authorbibnamehash}{f558a8b278965ec5e8e839a1111bd1a8}
+      \strng{authornamehash}{f558a8b278965ec5e8e839a1111bd1a8}
+      \strng{authorfullhash}{f558a8b278965ec5e8e839a1111bd1a8}
+      \strng{authorfullhashraw}{f558a8b278965ec5e8e839a1111bd1a8}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Tourism Recreation Research}
+      \field{number}{1}
+      \field{title}{Examining tourist preferences to slow glacier loss: evidence from Alaska}
+      \field{volume}{45}
+      \field{year}{2020}
+      \field{pages}{107\bibrangedash 117}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1080/02508281.2019.1606978
+      \endverb
+      \verb{eprint}
+      \verb https://doi.org/10.1080/02508281.2019.1606978
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1080/02508281.2019.1606978
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1080/02508281.2019.1606978
+      \endverb
+    \endentry
+    \entry{mckercher2003sustainable}{inproceedings}{}{}
+      \name{author}{1}{}{%
+        {{hash=53ee1fbf85d75c6a4ef31df3ca5250ed}{%
+           family={McKercher},
+           familyi={M\bibinitperiod},
+           given={Bob},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{53ee1fbf85d75c6a4ef31df3ca5250ed}
+      \strng{fullhash}{53ee1fbf85d75c6a4ef31df3ca5250ed}
+      \strng{fullhashraw}{53ee1fbf85d75c6a4ef31df3ca5250ed}
+      \strng{bibnamehash}{53ee1fbf85d75c6a4ef31df3ca5250ed}
+      \strng{authorbibnamehash}{53ee1fbf85d75c6a4ef31df3ca5250ed}
+      \strng{authornamehash}{53ee1fbf85d75c6a4ef31df3ca5250ed}
+      \strng{authorfullhash}{53ee1fbf85d75c6a4ef31df3ca5250ed}
+      \strng{authorfullhashraw}{53ee1fbf85d75c6a4ef31df3ca5250ed}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{National seminar on sustainable tourism development}
+      \field{number}{10}
+      \field{title}{Sustainable tourism development-guiding principles for planning and management}
+      \field{volume}{1}
+      \field{year}{2003}
+    \endentry
+    \entry{unep2018}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=77e735bae2840b83aacd3c4ad7e795a0}{%
+           family={Programme},
+           familyi={P\bibinitperiod},
+           given={United\bibnamedelimb Nations\bibnamedelima Environment},
+           giveni={U\bibinitperiod\bibinitdelim N\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \strng{namehash}{77e735bae2840b83aacd3c4ad7e795a0}
+      \strng{fullhash}{77e735bae2840b83aacd3c4ad7e795a0}
+      \strng{fullhashraw}{77e735bae2840b83aacd3c4ad7e795a0}
+      \strng{bibnamehash}{77e735bae2840b83aacd3c4ad7e795a0}
+      \strng{authorbibnamehash}{77e735bae2840b83aacd3c4ad7e795a0}
+      \strng{authornamehash}{77e735bae2840b83aacd3c4ad7e795a0}
+      \strng{authorfullhash}{77e735bae2840b83aacd3c4ad7e795a0}
+      \strng{authorfullhashraw}{77e735bae2840b83aacd3c4ad7e795a0}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Sustainable Tourism: Towards a Green Economy}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://www.unep.org
+      \endverb
+      \verb{url}
+      \verb https://www.unep.org
+      \endverb
+    \endentry
+    \entry{gossling2015}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=96637ffc7520f5ac0f9eae1e14820ceb}{%
+           family={Gössling},
+           familyi={G\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=712473069b557343b72e32525ab44df2}{%
+           family={Peeters},
+           familyi={P\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Routledge}%
+      }
+      \strng{namehash}{c8cd9a1483459156f585e5931d15909c}
+      \strng{fullhash}{c8cd9a1483459156f585e5931d15909c}
+      \strng{fullhashraw}{c8cd9a1483459156f585e5931d15909c}
+      \strng{bibnamehash}{c8cd9a1483459156f585e5931d15909c}
+      \strng{authorbibnamehash}{c8cd9a1483459156f585e5931d15909c}
+      \strng{authornamehash}{c8cd9a1483459156f585e5931d15909c}
+      \strng{authorfullhash}{c8cd9a1483459156f585e5931d15909c}
+      \strng{authorfullhashraw}{c8cd9a1483459156f585e5931d15909c}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{The Routledge Handbook of Tourism and the Environment}
+      \field{title}{Assessing Tourism's Carbon Footprint}
+      \field{year}{2015}
+      \verb{urlraw}
+      \verb https://www.routledge.com
+      \endverb
+      \verb{url}
+      \verb https://www.routledge.com
+      \endverb
+    \endentry
+    \entry{unwto2020}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=62ee3640e3dc6484375d4e90383f8004}{%
+           family={Organization},
+           familyi={O\bibinitperiod},
+           given={The\bibnamedelimb World\bibnamedelima Tourism},
+           giveni={T\bibinitperiod\bibinitdelim W\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+      }
+      \strng{namehash}{62ee3640e3dc6484375d4e90383f8004}
+      \strng{fullhash}{62ee3640e3dc6484375d4e90383f8004}
+      \strng{fullhashraw}{62ee3640e3dc6484375d4e90383f8004}
+      \strng{bibnamehash}{62ee3640e3dc6484375d4e90383f8004}
+      \strng{authorbibnamehash}{62ee3640e3dc6484375d4e90383f8004}
+      \strng{authornamehash}{62ee3640e3dc6484375d4e90383f8004}
+      \strng{authorfullhash}{62ee3640e3dc6484375d4e90383f8004}
+      \strng{authorfullhashraw}{62ee3640e3dc6484375d4e90383f8004}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Tourism and Local Communities}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://www.unwto.org
+      \endverb
+      \verb{url}
+      \verb https://www.unwto.org
+      \endverb
+    \endentry
+    \entry{McDowell2017}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=d91649acd857b892a939369c44b3fa9b}{%
+           family={Group},
+           familyi={G\bibinitperiod},
+           given={McDowell},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{d91649acd857b892a939369c44b3fa9b}
+      \strng{fullhash}{d91649acd857b892a939369c44b3fa9b}
+      \strng{fullhashraw}{d91649acd857b892a939369c44b3fa9b}
+      \strng{bibnamehash}{d91649acd857b892a939369c44b3fa9b}
+      \strng{authorbibnamehash}{d91649acd857b892a939369c44b3fa9b}
+      \strng{authornamehash}{d91649acd857b892a939369c44b3fa9b}
+      \strng{authorfullhash}{d91649acd857b892a939369c44b3fa9b}
+      \strng{authorfullhashraw}{d91649acd857b892a939369c44b3fa9b}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2025-01-23}
+      \field{title}{Juneau Visitor Profile and Economic Impact Report}
+      \field{year}{2017}
+      \verb{urlraw}
+      \verb https://akcruise.org/wp-content/uploads/2018/04/McDowell-Group-Juneau-Visitor-Profile-and-Economic-Impact-Report-10-2-2017.pdf
+      \endverb
+      \verb{url}
+      \verb https://akcruise.org/wp-content/uploads/2018/04/McDowell-Group-Juneau-Visitor-Profile-and-Economic-Impact-Report-10-2-2017.pdf
+      \endverb
+    \endentry
+    \entry{CLAAK2024}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=d7039cfffaa4096817b427fe1d981518}{%
+           family={Alaska},
+           familyi={A\bibinitperiod},
+           given={CLAA},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{d7039cfffaa4096817b427fe1d981518}
+      \strng{fullhash}{d7039cfffaa4096817b427fe1d981518}
+      \strng{fullhashraw}{d7039cfffaa4096817b427fe1d981518}
+      \strng{bibnamehash}{d7039cfffaa4096817b427fe1d981518}
+      \strng{authorbibnamehash}{d7039cfffaa4096817b427fe1d981518}
+      \strng{authornamehash}{d7039cfffaa4096817b427fe1d981518}
+      \strng{authorfullhash}{d7039cfffaa4096817b427fe1d981518}
+      \strng{authorfullhashraw}{d7039cfffaa4096817b427fe1d981518}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2025-01-23}
+      \field{title}{Juneau 2024 Report}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://claalaska.com/wp-content/uploads/2024/03/JNU-Juneau-2024.pdf
+      \endverb
+      \verb{url}
+      \verb https://claalaska.com/wp-content/uploads/2024/03/JNU-Juneau-2024.pdf
+      \endverb
+    \endentry
+    \entry{unwto2018}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=d31580cac45370adf249a784a12ecdc0}{%
+           family={UNWTO},
+           familyi={U\bibinitperiod}}}%
+      }
+      \strng{namehash}{d31580cac45370adf249a784a12ecdc0}
+      \strng{fullhash}{d31580cac45370adf249a784a12ecdc0}
+      \strng{fullhashraw}{d31580cac45370adf249a784a12ecdc0}
+      \strng{bibnamehash}{d31580cac45370adf249a784a12ecdc0}
+      \strng{authorbibnamehash}{d31580cac45370adf249a784a12ecdc0}
+      \strng{authornamehash}{d31580cac45370adf249a784a12ecdc0}
+      \strng{authorfullhash}{d31580cac45370adf249a784a12ecdc0}
+      \strng{authorfullhashraw}{d31580cac45370adf249a784a12ecdc0}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Tourism and Climate Change: Impacts, Adaptation, and Mitigation}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://www.unwto.org
+      \endverb
+      \verb{url}
+      \verb https://www.unwto.org
+      \endverb
+    \endentry
+    \entry{Nature2024}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=9a136ac35ce573b0bb8811a65c18a4dd}{%
+           family={Name(s)},
+           familyi={N\bibinitperiod},
+           given={Author(s)},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{9a136ac35ce573b0bb8811a65c18a4dd}
+      \strng{fullhash}{9a136ac35ce573b0bb8811a65c18a4dd}
+      \strng{fullhashraw}{9a136ac35ce573b0bb8811a65c18a4dd}
+      \strng{bibnamehash}{9a136ac35ce573b0bb8811a65c18a4dd}
+      \strng{authorbibnamehash}{9a136ac35ce573b0bb8811a65c18a4dd}
+      \strng{authornamehash}{9a136ac35ce573b0bb8811a65c18a4dd}
+      \strng{authorfullhash}{9a136ac35ce573b0bb8811a65c18a4dd}
+      \strng{authorfullhashraw}{9a136ac35ce573b0bb8811a65c18a4dd}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Nature Communications}
+      \field{note}{Accessed: 2025-01-23}
+      \field{title}{Title of the article}
+      \field{volume}{XX}
+      \field{year}{2024}
+      \field{pages}{XXX\bibrangedash XXX}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1038/s41467-024-54582-7
+      \endverb
+      \verb{urlraw}
+      \verb https://www.nature.com/articles/s41467-024-54582-7
+      \endverb
+      \verb{url}
+      \verb https://www.nature.com/articles/s41467-024-54582-7
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
